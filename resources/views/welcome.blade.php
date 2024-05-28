@@ -1,172 +1,1496 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+<head>
+    <meta charset="utf-8">
+    <title>Forum - Responsive HTML5 Template</title>
+    <meta name="keywords" content="HTML5 Template">
+    <meta name="description" content="Forum - Responsive HTML5 Template">
+    <meta name="author" content="Forum">
+    <link rel="shortcut icon" href="{{ asset('favicon/favicon.ico') }}">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ asset('forum/css/style.css') }}">
+</head>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+<body class="font-sans antialiased dark:bg-black dark:text-white/50">
+    <x-forum.navbar />
+    <x-forum.header />
 
-        <!-- Styles -->
-        <style>
-            /* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Figtree, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.absolute{position:absolute}.relative{position:relative}.-left-20{left:-5rem}.top-0{top:0px}.-bottom-16{bottom:-4rem}.-left-16{left:-4rem}.-mx-3{margin-left:-0.75rem;margin-right:-0.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.aspect-video{aspect-ratio:16 / 9}.size-12{width:3rem;height:3rem}.size-5{width:1.25rem;height:1.25rem}.size-6{width:1.5rem;height:1.5rem}.h-12{height:3rem}.h-40{height:10rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-full{width:100%}.w-\[calc\(100\%\+8rem\)\]{width:calc(100% + 8rem)}.w-auto{width:auto}.max-w-\[877px\]{max-width:877px}.max-w-2xl{max-width:42rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.self-center{align-self:center}.overflow-hidden{overflow:hidden}.rounded-\[10px\]{border-radius:10px}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-sm{border-radius:0.125rem}.bg-\[\#FF2D20\]\/10{background-color:rgb(255 45 32 / 0.1)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-gradient-to-b{background-image:linear-gradient(to bottom, var(--tw-gradient-stops))}.from-transparent{--tw-gradient-from:transparent var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-white{--tw-gradient-to:rgb(255 255 255 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #fff var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-white{--tw-gradient-to:#fff var(--tw-gradient-to-position)}.stroke-\[\#FF2D20\]{stroke:#FF2D20}.object-cover{object-fit:cover}.object-top{object-position:top}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.pt-3{padding-top:0.75rem}.text-center{text-align:center}.font-sans{font-family:Figtree, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-sm\/relaxed{font-size:0.875rem;line-height:1.625}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-semibold{font-weight:600}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-\[0px_14px_34px_0px_rgba\(0\2c 0\2c 0\2c 0\.08\)\]{--tw-shadow:0px 14px 34px 0px rgba(0,0,0,0.08);--tw-shadow-colored:0px 14px 34px 0px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.ring-transparent{--tw-ring-color:transparent}.ring-white\/\[0\.05\]{--tw-ring-color:rgb(255 255 255 / 0.05)}.drop-shadow-\[0px_4px_34px_rgba\(0\2c 0\2c 0\2c 0\.06\)\]{--tw-drop-shadow:drop-shadow(0px 4px 34px rgba(0,0,0,0.06));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-\[0px_4px_34px_rgba\(0\2c 0\2c 0\2c 0\.25\)\]{--tw-drop-shadow:drop-shadow(0px 4px 34px rgba(0,0,0,0.25));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.selection\:bg-\[\#FF2D20\] *::selection{--tw-bg-opacity:1;background-color:rgb(255 45 32 / var(--tw-bg-opacity))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.selection\:bg-\[\#FF2D20\]::selection{--tw-bg-opacity:1;background-color:rgb(255 45 32 / var(--tw-bg-opacity))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:text-black:hover{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity))}.hover\:text-black\/70:hover{color:rgb(0 0 0 / 0.7)}.hover\:ring-black\/20:hover{--tw-ring-color:rgb(0 0 0 / 0.2)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus-visible\:ring-1:focus-visible{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus-visible\:ring-\[\#FF2D20\]:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 45 32 / var(--tw-ring-opacity))}@media (min-width: 640px){.sm\:size-16{width:4rem;height:4rem}.sm\:size-6{width:1.5rem;height:1.5rem}.sm\:pt-5{padding-top:1.25rem}}@media (min-width: 768px){.md\:row-span-3{grid-row:span 3 / span 3}}@media (min-width: 1024px){.lg\:col-start-2{grid-column-start:2}.lg\:h-16{height:4rem}.lg\:max-w-7xl{max-width:80rem}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:flex-col{flex-direction:column}.lg\:items-end{align-items:flex-end}.lg\:justify-center{justify-content:center}.lg\:gap-8{gap:2rem}.lg\:p-10{padding:2.5rem}.lg\:pb-10{padding-bottom:2.5rem}.lg\:pt-0{padding-top:0px}.lg\:text-\[\#FF2D20\]{--tw-text-opacity:1;color:rgb(255 45 32 / var(--tw-text-opacity))}}@media (prefers-color-scheme: dark){.dark\:block{display:block}.dark\:hidden{display:none}.dark\:bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}.dark\:bg-zinc-900{--tw-bg-opacity:1;background-color:rgb(24 24 27 / var(--tw-bg-opacity))}.dark\:via-zinc-900{--tw-gradient-to:rgb(24 24 27 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #18181b var(--tw-gradient-via-position), var(--tw-gradient-to)}.dark\:to-zinc-900{--tw-gradient-to:#18181b var(--tw-gradient-to-position)}.dark\:text-white\/50{color:rgb(255 255 255 / 0.5)}.dark\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:text-white\/70{color:rgb(255 255 255 / 0.7)}.dark\:ring-zinc-800{--tw-ring-opacity:1;--tw-ring-color:rgb(39 39 42 / var(--tw-ring-opacity))}.dark\:hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:hover\:text-white\/70:hover{color:rgb(255 255 255 / 0.7)}.dark\:hover\:text-white\/80:hover{color:rgb(255 255 255 / 0.8)}.dark\:hover\:ring-zinc-700:hover{--tw-ring-opacity:1;--tw-ring-color:rgb(63 63 70 / var(--tw-ring-opacity))}.dark\:focus-visible\:ring-\[\#FF2D20\]:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 45 32 / var(--tw-ring-opacity))}.dark\:focus-visible\:ring-white:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 255 255 / var(--tw-ring-opacity))}}
-        </style>
-    </head>
-    <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-            <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://laravel.com/assets/img/welcome/background.svg" />
-            <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
-                <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                    <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
-                        <div class="flex lg:justify-center lg:col-start-2">
-                            <svg class="h-12 w-auto text-white lg:h-16 lg:text-[#FF2D20]" viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="currentColor"/></svg>
-                        </div>
-                        @if (Route::has('login'))
-                            <nav class="-mx-3 flex flex-1 justify-end">
-                                @auth
-                                    <a
-                                        href="{{ url('/dashboard') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                        Dashboard
-                                    </a>
-                                @else
-                                    <a
-                                        href="{{ route('login') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                        Log in
-                                    </a>
-
-                                    @if (Route::has('register'))
-                                        <a
-                                            href="{{ route('register') }}"
-                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                        >
-                                            Register
-                                        </a>
-                                    @endif
-                                @endauth
-                            </nav>
-                        @endif
-                    </header>
-
-                    <main class="mt-6">
-                        <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
-                            <a
-                                href="https://laravel.com/docs"
-                                id="docs-card"
-                                class="flex flex-col items-start gap-6 overflow-hidden rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] md:row-span-3 lg:p-10 lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div id="screenshot-container" class="relative flex w-full flex-1 items-stretch">
-                                    <img
-                                        src="https://laravel.com/assets/img/welcome/docs-light.svg"
-                                        alt="Laravel documentation screenshot"
-                                        class="aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.06)] dark:hidden"
-                                        onerror="
-                                            document.getElementById('screenshot-container').classList.add('!hidden');
-                                            document.getElementById('docs-card').classList.add('!row-span-1');
-                                            document.getElementById('docs-card-content').classList.add('!flex-row');
-                                            document.getElementById('background').classList.add('!hidden');
-                                        "
-                                    />
-                                    <img
-                                        src="https://laravel.com/assets/img/welcome/docs-dark.svg"
-                                        alt="Laravel documentation screenshot"
-                                        class="hidden aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.25)] dark:block"
-                                    />
-                                    <div
-                                        class="absolute -bottom-16 -left-16 h-40 w-[calc(100%+8rem)] bg-gradient-to-b from-transparent via-white to-white dark:via-zinc-900 dark:to-zinc-900"
-                                    ></div>
-                                </div>
-
-                                <div class="relative flex items-center gap-6 lg:items-end">
-                                    <div id="docs-card-content" class="flex items-start gap-6 lg:flex-col">
-                                        <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                            <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="#FF2D20" d="M23 4a1 1 0 0 0-1.447-.894L12.224 7.77a.5.5 0 0 1-.448 0L2.447 3.106A1 1 0 0 0 1 4v13.382a1.99 1.99 0 0 0 1.105 1.79l9.448 4.728c.14.065.293.1.447.1.154-.005.306-.04.447-.105l9.453-4.724a1.99 1.99 0 0 0 1.1-1.789V4ZM3 6.023a.25.25 0 0 1 .362-.223l7.5 3.75a.251.251 0 0 1 .138.223v11.2a.25.25 0 0 1-.362.224l-7.5-3.75a.25.25 0 0 1-.138-.22V6.023Zm18 11.2a.25.25 0 0 1-.138.224l-7.5 3.75a.249.249 0 0 1-.329-.099.249.249 0 0 1-.033-.12V9.772a.251.251 0 0 1 .138-.224l7.5-3.75a.25.25 0 0 1 .362.224v11.2Z"/><path fill="#FF2D20" d="m3.55 1.893 8 4.048a1.008 1.008 0 0 0 .9 0l8-4.048a1 1 0 0 0-.9-1.785l-7.322 3.706a.506.506 0 0 1-.452 0L4.454.108a1 1 0 0 0-.9 1.785H3.55Z"/></svg>
-                                        </div>
-
-                                        <div class="pt-3 sm:pt-5 lg:pt-0">
-                                            <h2 class="text-xl font-semibold text-black dark:text-white">Documentation</h2>
-
-                                            <p class="mt-4 text-sm/relaxed">
-                                                Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <svg class="size-6 shrink-0 stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                                </div>
-                            </a>
-
-                            <a
-                                href="https://laracasts.com"
-                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g fill="#FF2D20"><path d="M24 8.25a.5.5 0 0 0-.5-.5H.5a.5.5 0 0 0-.5.5v12a2.5 2.5 0 0 0 2.5 2.5h19a2.5 2.5 0 0 0 2.5-2.5v-12Zm-7.765 5.868a1.221 1.221 0 0 1 0 2.264l-6.626 2.776A1.153 1.153 0 0 1 8 18.123v-5.746a1.151 1.151 0 0 1 1.609-1.035l6.626 2.776ZM19.564 1.677a.25.25 0 0 0-.177-.427H15.6a.106.106 0 0 0-.072.03l-4.54 4.543a.25.25 0 0 0 .177.427h3.783c.027 0 .054-.01.073-.03l4.543-4.543ZM22.071 1.318a.047.047 0 0 0-.045.013l-4.492 4.492a.249.249 0 0 0 .038.385.25.25 0 0 0 .14.042h5.784a.5.5 0 0 0 .5-.5v-2a2.5 2.5 0 0 0-1.925-2.432ZM13.014 1.677a.25.25 0 0 0-.178-.427H9.101a.106.106 0 0 0-.073.03l-4.54 4.543a.25.25 0 0 0 .177.427H8.4a.106.106 0 0 0 .073-.03l4.54-4.543ZM6.513 1.677a.25.25 0 0 0-.177-.427H2.5A2.5 2.5 0 0 0 0 3.75v2a.5.5 0 0 0 .5.5h1.4a.106.106 0 0 0 .073-.03l4.54-4.543Z"/></g></svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Laracasts</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                    </p>
-                                </div>
-
-                                <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                            </a>
-
-                            <a
-                                href="https://laravel-news.com"
-                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g fill="#FF2D20"><path d="M8.75 4.5H5.5c-.69 0-1.25.56-1.25 1.25v4.75c0 .69.56 1.25 1.25 1.25h3.25c.69 0 1.25-.56 1.25-1.25V5.75c0-.69-.56-1.25-1.25-1.25Z"/><path d="M24 10a3 3 0 0 0-3-3h-2V2.5a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2V20a3.5 3.5 0 0 0 3.5 3.5h17A3.5 3.5 0 0 0 24 20V10ZM3.5 21.5A1.5 1.5 0 0 1 2 20V3a.5.5 0 0 1 .5-.5h14a.5.5 0 0 1 .5.5v17c0 .295.037.588.11.874a.5.5 0 0 1-.484.625L3.5 21.5ZM22 20a1.5 1.5 0 1 1-3 0V9.5a.5.5 0 0 1 .5-.5H21a1 1 0 0 1 1 1v10Z"/><path d="M12.751 6.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 7.3v-.5a.75.75 0 0 1 .751-.753ZM12.751 10.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 11.3v-.5a.75.75 0 0 1 .751-.753ZM4.751 14.047h10a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-10A.75.75 0 0 1 4 15.3v-.5a.75.75 0 0 1 .751-.753ZM4.75 18.047h7.5a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-7.5A.75.75 0 0 1 4 19.3v-.5a.75.75 0 0 1 .75-.753Z"/></g></svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Laravel News</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                    </p>
-                                </div>
-
-                                <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                            </a>
-
-                            <div class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                        <g fill="#FF2D20">
-                                            <path
-                                                d="M16.597 12.635a.247.247 0 0 0-.08-.237 2.234 2.234 0 0 1-.769-1.68c.001-.195.03-.39.084-.578a.25.25 0 0 0-.09-.267 8.8 8.8 0 0 0-4.826-1.66.25.25 0 0 0-.268.181 2.5 2.5 0 0 1-2.4 1.824.045.045 0 0 0-.045.037 12.255 12.255 0 0 0-.093 3.86.251.251 0 0 0 .208.214c2.22.366 4.367 1.08 6.362 2.118a.252.252 0 0 0 .32-.079 10.09 10.09 0 0 0 1.597-3.733ZM13.616 17.968a.25.25 0 0 0-.063-.407A19.697 19.697 0 0 0 8.91 15.98a.25.25 0 0 0-.287.325c.151.455.334.898.548 1.328.437.827.981 1.594 1.619 2.28a.249.249 0 0 0 .32.044 29.13 29.13 0 0 0 2.506-1.99ZM6.303 14.105a.25.25 0 0 0 .265-.274 13.048 13.048 0 0 1 .205-4.045.062.062 0 0 0-.022-.07 2.5 2.5 0 0 1-.777-.982.25.25 0 0 0-.271-.149 11 11 0 0 0-5.6 2.815.255.255 0 0 0-.075.163c-.008.135-.02.27-.02.406.002.8.084 1.598.246 2.381a.25.25 0 0 0 .303.193 19.924 19.924 0 0 1 5.746-.438ZM9.228 20.914a.25.25 0 0 0 .1-.393 11.53 11.53 0 0 1-1.5-2.22 12.238 12.238 0 0 1-.91-2.465.248.248 0 0 0-.22-.187 18.876 18.876 0 0 0-5.69.33.249.249 0 0 0-.179.336c.838 2.142 2.272 4 4.132 5.353a.254.254 0 0 0 .15.048c1.41-.01 2.807-.282 4.117-.802ZM18.93 12.957l-.005-.008a.25.25 0 0 0-.268-.082 2.21 2.21 0 0 1-.41.081.25.25 0 0 0-.217.2c-.582 2.66-2.127 5.35-5.75 7.843a.248.248 0 0 0-.09.299.25.25 0 0 0 .065.091 28.703 28.703 0 0 0 2.662 2.12.246.246 0 0 0 .209.037c2.579-.701 4.85-2.242 6.456-4.378a.25.25 0 0 0 .048-.189 13.51 13.51 0 0 0-2.7-6.014ZM5.702 7.058a.254.254 0 0 0 .2-.165A2.488 2.488 0 0 1 7.98 5.245a.093.093 0 0 0 .078-.062 19.734 19.734 0 0 1 3.055-4.74.25.25 0 0 0-.21-.41 12.009 12.009 0 0 0-10.4 8.558.25.25 0 0 0 .373.281 12.912 12.912 0 0 1 4.826-1.814ZM10.773 22.052a.25.25 0 0 0-.28-.046c-.758.356-1.55.635-2.365.833a.25.25 0 0 0-.022.48c1.252.43 2.568.65 3.893.65.1 0 .2 0 .3-.008a.25.25 0 0 0 .147-.444c-.526-.424-1.1-.917-1.673-1.465ZM18.744 8.436a.249.249 0 0 0 .15.228 2.246 2.246 0 0 1 1.352 2.054c0 .337-.08.67-.23.972a.25.25 0 0 0 .042.28l.007.009a15.016 15.016 0 0 1 2.52 4.6.25.25 0 0 0 .37.132.25.25 0 0 0 .096-.114c.623-1.464.944-3.039.945-4.63a12.005 12.005 0 0 0-5.78-10.258.25.25 0 0 0-.373.274c.547 2.109.85 4.274.901 6.453ZM9.61 5.38a.25.25 0 0 0 .08.31c.34.24.616.561.8.935a.25.25 0 0 0 .3.127.631.631 0 0 1 .206-.034c2.054.078 4.036.772 5.69 1.991a.251.251 0 0 0 .267.024c.046-.024.093-.047.141-.067a.25.25 0 0 0 .151-.23A29.98 29.98 0 0 0 15.957.764a.25.25 0 0 0-.16-.164 11.924 11.924 0 0 0-2.21-.518.252.252 0 0 0-.215.076A22.456 22.456 0 0 0 9.61 5.38Z"
-                                            />
-                                        </g>
-                                    </svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Vibrant Ecosystem</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white dark:focus-visible:ring-[#FF2D20]">Forge</a>, <a href="https://vapor.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Vapor</a>, <a href="https://nova.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Nova</a>, <a href="https://envoyer.io" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Envoyer</a>, and <a href="https://herd.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Herd</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Echo</a>, <a href="https://laravel.com/docs/horizon" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Telescope</a>, and more.
-                                    </p>
-                                </div>
+    <main id="tt-pageContent" class="tt-offset-small">
+        <div class="container">
+            <div class="tt-topic-list">
+                <div class="tt-list-header">
+                    <div class="tt-col-topic">Topic</div>
+                    <div class="tt-col-category">Category</div>
+                    <div class="tt-col-value hide-mobile">Likes</div>
+                    <div class="tt-col-value hide-mobile">Replies</div>
+                    <div class="tt-col-value hide-mobile">Views</div>
+                    <div class="tt-col-value">Activity</div>
+                </div>
+                <div class="tt-topic-alert tt-alert-default" role="alert">
+                    <a href="#" target="_blank">4 new posts</a> are added recently, click here to load them.
+                </div>
+                <div class="tt-item tt-itemselect">
+                    <div class="tt-col-avatar">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-ava-k"></use>
+                        </svg>
+                    </div>
+                    <div class="tt-col-description">
+                        <h6 class="tt-title"><a href="page-single-topic.html">
+                                <svg class="tt-icon">
+                                    <use xlink:href="#icon-pinned"></use>
+                                </svg>
+                                Halloween Costume Contest 2018
+                            </a></h6>
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-11">
+                                <ul class="tt-list-badge">
+                                    <li class="show-mobile"><a href="#"><span
+                                                class="tt-color01 tt-badge">politics</span></a></li>
+                                    <li><a href="#"><span class="tt-badge">contests</span></a></li>
+                                    <li><a href="#"><span class="tt-badge">authors</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-1 ml-auto show-mobile">
+                                <div class="tt-value">1h</div>
                             </div>
                         </div>
-                    </main>
-
-                    <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </footer>
+                    </div>
+                    <div class="tt-col-category"><span class="tt-color01 tt-badge">politics</span></div>
+                    <div class="tt-col-value hide-mobile">985</div>
+                    <div class="tt-col-value tt-color-select hide-mobile">502</div>
+                    <div class="tt-col-value hide-mobile">15.1k</div>
+                    <div class="tt-col-value hide-mobile">1h</div>
+                </div>
+                <div class="tt-item tt-itemselect">
+                    <div class="tt-col-avatar">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-ava-l"></use>
+                        </svg>
+                    </div>
+                    <div class="tt-col-description">
+                        <h6 class="tt-title"><a href="page-single-topic.html">
+                                <svg class="tt-icon">
+                                    <use xlink:href="#icon-locked"></use>
+                                </svg>
+                                We’re removing Envato Credits from Market
+                            </a></h6>
+                        <div class="row align-items-center no-gutters  hide-desktope">
+                            <div class="col-11">
+                                <ul class="tt-list-badge">
+                                    <li class="show-mobile"><a href="#"><span
+                                                class="tt-color02 tt-badge">video</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-1 ml-auto show-mobile">
+                                <div class="tt-value">2h</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tt-col-category"><span class="tt-color02 tt-badge">video</span></div>
+                    <div class="tt-col-value hide-mobile">584</div>
+                    <div class="tt-col-value tt-color-select  hide-mobile">35</div>
+                    <div class="tt-col-value hide-mobile">1.3k</div>
+                    <div class="tt-col-value hide-mobile">2h</div>
+                </div>
+                <div class="tt-item tt-itemselect">
+                    <div class="tt-col-avatar">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-ava-d"></use>
+                        </svg>
+                    </div>
+                    <div class="tt-col-description">
+                        <h6 class="tt-title"><a href="page-single-topic.html">
+                                Web Hosting Packages for ThemeForest WordPress
+                            </a></h6>
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-11">
+                                <ul class="tt-list-badge">
+                                    <li class="show-mobile"><a href="#"><span
+                                                class="tt-color03 tt-badge">exchange</span></a></li>
+                                    <li><a href="#"><span class="tt-badge">themeforest</span></a></li>
+                                    <li><a href="#"><span class="tt-badge">elements</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-1 ml-auto show-mobile">
+                                <div class="tt-value">2h</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tt-col-category"><span class="tt-color03 tt-badge">exchange</span></div>
+                    <div class="tt-col-value  hide-mobile">401</div>
+                    <div class="tt-col-value tt-color-select  hide-mobile">975</div>
+                    <div class="tt-col-value  hide-mobile">12.6k</div>
+                    <div class="tt-col-value hide-mobile">2h</div>
+                </div>
+                <div class="tt-item">
+                    <div class="tt-col-avatar">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-ava-c"></use>
+                        </svg>
+                    </div>
+                    <div class="tt-col-description">
+                        <h6 class="tt-title"><a href="page-single-topic.html">
+                                Review Queue Changes for VideoHive & PhotoDune
+                            </a></h6>
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-11">
+                                <ul class="tt-list-badge">
+                                    <li class="show-mobile"><a href="#"><span
+                                                class="tt-color04 tt-badge">pets</span></a></li>
+                                    <li><a href="#"><span class="tt-badge">videohive</span></a></li>
+                                    <li><a href="#"><span class="tt-badge">photodune</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-1 ml-auto show-mobile">
+                                <div class="tt-value">1d</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tt-col-category"><span class="tt-color04 tt-badge">pets</span></div>
+                    <div class="tt-col-value  hide-mobile">308</div>
+                    <div class="tt-col-value tt-color-select  hide-mobile">660</div>
+                    <div class="tt-col-value  hide-mobile">8.3k</div>
+                    <div class="tt-col-value hide-mobile">1d</div>
+                </div>
+                <div class="tt-item">
+                    <div class="tt-col-avatar">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-ava-n"></use>
+                        </svg>
+                    </div>
+                    <div class="tt-col-description">
+                        <h6 class="tt-title"><a href="page-single-topic.html">
+                                Does Envato act against the authors of Envato markets?
+                            </a></h6>
+                        <div class="row align-items-center no-gutters  hide-desktope">
+                            <div class="col-11">
+                                <ul class="tt-list-badge">
+                                    <li class="show-mobile"><a href="#"><span
+                                                class="tt-color05 tt-badge">music</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-1 ml-auto show-mobile">
+                                <div class="tt-value">1d</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tt-col-category"><span class="tt-color05 tt-badge">music</span></div>
+                    <div class="tt-col-value hide-mobile">358</div>
+                    <div class="tt-col-value tt-color-select hide-mobile">68</div>
+                    <div class="tt-col-value hide-mobile">8.3k</div>
+                    <div class="tt-col-value hide-mobile">1d</div>
+                </div>
+                <div class="tt-item">
+                    <div class="tt-col-avatar">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-ava-h"></use>
+                        </svg>
+                    </div>
+                    <div class="tt-col-description">
+                        <h6 class="tt-title"><a href="page-single-topic.html">
+                                <svg class="tt-icon">
+                                    <use xlink:href="#icon-locked"></use>
+                                </svg>
+                                We Want to Hear From You! What Would You Like?
+                            </a></h6>
+                        <div class="row align-items-center no-gutters  hide-desktope">
+                            <div class="col-11">
+                                <ul class="tt-list-badge">
+                                    <li class="show-mobile"><a href="#"><span
+                                                class="tt-color06 tt-badge">movies</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-1 ml-auto show-mobile">
+                                <div class="tt-value">2d</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tt-col-category"><span class="tt-color06 tt-badge">movies</span></div>
+                    <div class="tt-col-value hide-mobile">671</div>
+                    <div class="tt-col-value tt-color-select  hide-mobile">29</div>
+                    <div class="tt-col-value hide-mobile">1.3k</div>
+                    <div class="tt-col-value hide-mobile">2d</div>
+                </div>
+                <div class="tt-item tt-item-popup">
+                    <div class="tt-col-avatar">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-ava-f"></use>
+                        </svg>
+                    </div>
+                    <div class="tt-col-message">
+                        Looks like you are new here. Register for free, learn and contribute.
+                    </div>
+                    <div class="tt-col-btn">
+                        <button type="button" class="btn btn-primary">Log in</button>
+                        <button type="button" class="btn btn-secondary">Sign up</button>
+                        <button type="button" class="btn-icon">
+                            <svg class="tt-icon">
+                                <use xlink:href="#icon-cancel"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="tt-item">
+                    <div class="tt-col-avatar">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-ava-t"></use>
+                        </svg>
+                    </div>
+                    <div class="tt-col-description">
+                        <h6 class="tt-title"><a href="page-single-topic.html">
+                                Cannot customize my intro
+                            </a></h6>
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-11">
+                                <ul class="tt-list-badge">
+                                    <li class="show-mobile"><a href="#"><span class="tt-color07 tt-badge">video
+                                                games</span></a></li>
+                                    <li><a href="#"><span class="tt-badge">videohive</span></a></li>
+                                    <li><a href="#"><span class="tt-badge">photodune</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-1 ml-auto show-mobile">
+                                <div class="tt-value">2d</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tt-col-category"><span class="tt-color07 tt-badge">video games</span></div>
+                    <div class="tt-col-value hide-mobile">364</div>
+                    <div class="tt-col-value tt-color-select  hide-mobile">36</div>
+                    <div class="tt-col-value  hide-mobile">982</div>
+                    <div class="tt-col-value hide-mobile">2d</div>
+                </div>
+                <div class="tt-item">
+                    <div class="tt-col-avatar">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-ava-k"></use>
+                        </svg>
+                    </div>
+                    <div class="tt-col-description">
+                        <h6 class="tt-title"><a href="page-single-topic.html">
+                                <svg class="tt-icon">
+                                    <use xlink:href="#icon-verified"></use>
+                                </svg>
+                                Microsoft Word and Power Point
+                            </a></h6>
+                        <div class="row align-items-center no-gutters hide-desktope">
+                            <div class="col-11">
+                                <ul class="tt-list-badge ">
+                                    <li class="show-mobile"><a href="#"><span
+                                                class="tt-color08 tt-badge">youtube</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-1 ml-auto show-mobile">
+                                <div class="tt-value">3d</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tt-col-category"><span class="tt-color08 tt-badge">youtube</span></div>
+                    <div class="tt-col-value  hide-mobile">698</div>
+                    <div class="tt-col-value tt-color-select  hide-mobile">78</div>
+                    <div class="tt-col-value  hide-mobile">2.1k</div>
+                    <div class="tt-col-value hide-mobile">3d</div>
+                </div>
+                <div class="tt-item">
+                    <div class="tt-col-avatar">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-ava-v"></use>
+                        </svg>
+                    </div>
+                    <div class="tt-col-description">
+                        <h6 class="tt-title"><a href="page-single-topic.html">
+                                First website template got rejected.
+                            </a></h6>
+                        <div class="row align-items-center no-gutters  hide-desktope">
+                            <div class="col-11">
+                                <ul class="tt-list-badge">
+                                    <li class="show-mobile"><a href="#"><span
+                                                class="tt-color09 tt-badge">social</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-1 ml-auto show-mobile">
+                                <div class="tt-value">3d</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tt-col-category"><span class="tt-color09 tt-badge">social</span></div>
+                    <div class="tt-col-value  hide-mobile">12</div>
+                    <div class="tt-col-value tt-color-select  hide-mobile">3</div>
+                    <div class="tt-col-value  hide-mobile">268</div>
+                    <div class="tt-col-value hide-mobile">3d</div>
+                </div>
+                <div class="tt-item">
+                    <div class="tt-col-avatar">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-ava-k"></use>
+                        </svg>
+                    </div>
+                    <div class="tt-col-description">
+                        <h6 class="tt-title"><a href="page-single-topic.html">
+                                <svg class="tt-icon">
+                                    <use xlink:href="#icon-pinned"></use>
+                                </svg>
+                                Proform or looking for contacting billing department
+                            </a></h6>
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-11">
+                                <ul class="tt-list-badge">
+                                    <li class="show-mobile"><a href="#"><span
+                                                class="tt-color10 tt-badge">science</span></a></li>
+                                    <li><a href="#"><span class="tt-badge">contests</span></a></li>
+                                    <li><a href="#"><span class="tt-badge">authors</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-1 ml-auto show-mobile">
+                                <div class="tt-value">3d</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tt-col-category"><span class="tt-color10 tt-badge">science</span></div>
+                    <div class="tt-col-value hide-mobile">274</div>
+                    <div class="tt-col-value tt-color-select hide-mobile">114</div>
+                    <div class="tt-col-value  hide-mobile">2.3k</div>
+                    <div class="tt-col-value hide-mobile">3d</div>
+                </div>
+                <div class="tt-item">
+                    <div class="tt-col-avatar">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-ava-y"></use>
+                        </svg>
+                    </div>
+                    <div class="tt-col-description">
+                        <h6 class="tt-title"><a href="page-single-topic.html">
+                                <svg class="tt-icon">
+                                    <use xlink:href="#icon-locked"></use>
+                                </svg>
+                                Refund for wrongly purchase HTML template
+                            </a></h6>
+                        <div class="row align-items-center no-gutters hide-desktope">
+                            <div class="col-11">
+                                <ul class="tt-list-badge">
+                                    <li class="show-mobile"><a href="#"><span
+                                                class="tt-color11 tt-badge">entertainment</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-1 ml-auto show-mobile">
+                                <div class="tt-value">3d</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tt-col-category"><span class="tt-color11 tt-badge">entertainment</span></div>
+                    <div class="tt-col-value hide-mobile">657</div>
+                    <div class="tt-col-value tt-color-select hide-mobile">177</div>
+                    <div class="tt-col-value hide-mobile">2.6k</div>
+                    <div class="tt-col-value hide-mobile">3d</div>
+                </div>
+                <div class="tt-item">
+                    <div class="tt-col-avatar">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-ava-s"></use>
+                        </svg>
+                    </div>
+                    <div class="tt-col-description">
+                        <h6 class="tt-title"><a href="page-single-topic.html">
+                                Why all my affiliate balance is pending?
+                            </a></h6>
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-11">
+                                <ul class="tt-list-badge">
+                                    <li class="show-mobile"><a href="#"><span
+                                                class="tt-color03 tt-badge">exchange</span></a></li>
+                                    <li><a href="#"><span class="tt-badge">themeforest</span></a></li>
+                                    <li><a href="#"><span class="tt-badge">elements</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-1 ml-auto show-mobile">
+                                <div class="tt-value">4d</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tt-col-category"><span class="tt-color03 tt-badge">exchange</span></div>
+                    <div class="tt-col-value hide-mobile">37</div>
+                    <div class="tt-col-value tt-color-select hide-mobile">31</div>
+                    <div class="tt-col-value hide-mobile">257</div>
+                    <div class="tt-col-value hide-mobile">4d</div>
+                </div>
+                <div class="tt-item">
+                    <div class="tt-col-avatar">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-ava-l"></use>
+                        </svg>
+                    </div>
+                    <div class="tt-col-description">
+                        <h6 class="tt-title"><a href="page-single-topic.html">
+                                Google snippets wordpress plugin
+                            </a></h6>
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-11">
+                                <ul class="tt-list-badge">
+                                    <li class="show-mobile"><a href="#"><span
+                                                class="tt-color04 tt-badge">pets</span></a></li>
+                                    <li><a href="#"><span class="tt-badge">videohive</span></a></li>
+                                    <li><a href="#"><span class="tt-badge">photodune</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-1 ml-auto show-mobile">
+                                <div class="tt-value">4d</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tt-col-category"><span class="tt-color04 tt-badge">pets</span></div>
+                    <div class="tt-col-value hide-mobile">987</div>
+                    <div class="tt-col-value tt-color-select hide-mobile">271</div>
+                    <div class="tt-col-value hide-mobile">3.8k</div>
+                    <div class="tt-col-value hide-mobile">4d</div>
+                </div>
+                <div class="tt-item">
+                    <div class="tt-col-avatar">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-ava-n"></use>
+                        </svg>
+                    </div>
+                    <div class="tt-col-description">
+                        <h6 class="tt-title"><a href="page-single-topic.html">
+                                How to use Team Listing?
+                            </a></h6>
+                        <div class="row align-items-center no-gutters hide-desktope">
+                            <div class="col-11">
+                                <ul class="tt-list-badge">
+                                    <li class="show-mobile"><a href="#"><span
+                                                class="tt-color09 tt-badge">social</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-1 ml-auto show-mobile">
+                                <div class="tt-value">5d</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tt-col-category"><span class="tt-color09 tt-badge">social</span></div>
+                    <div class="tt-col-value hide-mobile">324</div>
+                    <div class="tt-col-value tt-color-select hide-mobile">163</div>
+                    <div class="tt-col-value hide-mobile">2.3k</div>
+                    <div class="tt-col-value hide-mobile">5d</div>
+                </div>
+                <div class="tt-item">
+                    <div class="tt-col-avatar">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-ava-r"></use>
+                        </svg>
+                    </div>
+                    <div class="tt-col-description">
+                        <h6 class="tt-title"><a href="page-single-topic.html">
+                                <svg class="tt-icon">
+                                    <use xlink:href="#icon-locked"></use>
+                                </svg>
+                                Can’t change image on main page of Coaching Theme
+                            </a></h6>
+                        <div class="row align-items-center no-gutters hide-desktope">
+                            <div class="col-11">
+                                <ul class="tt-list-badge">
+                                    <li class="show-mobile"><a href="#"><span
+                                                class="tt-color02 tt-badge">video</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-1 ml-auto show-mobile">
+                                <div class="tt-value">5d</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tt-col-category"><span class="tt-color02 tt-badge">video</span></div>
+                    <div class="tt-col-value hide-mobile">879</div>
+                    <div class="tt-col-value tt-color-select hide-mobile">237</div>
+                    <div class="tt-col-value hide-mobile">4.5k</div>
+                    <div class="tt-col-value hide-mobile">5d</div>
+                </div>
+                <div class="tt-item">
+                    <div class="tt-col-avatar">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-ava-b"></use>
+                        </svg>
+                    </div>
+                    <div class="tt-col-description">
+                        <h6 class="tt-title"><a href="page-single-topic.html">
+                                Documentation on Glitch package usage?
+                            </a></h6>
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-11">
+                                <ul class="tt-list-badge">
+                                    <li class="show-mobile"><a href="#"><span
+                                                class="tt-color12 tt-badge">arts</span></a></li>
+                                    <li><a href="#"><span class="tt-badge">themeforest</span></a></li>
+                                    <li><a href="#"><span class="tt-badge">elements</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-1 ml-auto show-mobile">
+                                <div class="tt-value">5d</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tt-col-category"><span class="tt-color12 tt-badge">arts</span></div>
+                    <div class="tt-col-value hide-mobile">726</div>
+                    <div class="tt-col-value tt-color-select hide-mobile">246</div>
+                    <div class="tt-col-value hide-mobile">7.6k</div>
+                    <div class="tt-col-value hide-mobile">5d</div>
+                </div>
+                <div class="tt-item">
+                    <div class="tt-col-avatar">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-ava-a"></use>
+                        </svg>
+                    </div>
+                    <div class="tt-col-description">
+                        <h6 class="tt-title"><a href="page-single-topic.html">
+                                Woohoo! You’ve made it. Welcome to the Elite Club
+                            </a></h6>
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-11">
+                                <ul class="tt-list-badge">
+                                    <li class="show-mobile"><a href="#"><span
+                                                class="tt-color04 tt-badge">pets</span></a></li>
+                                    <li><a href="#"><span class="tt-badge">videohive</span></a></li>
+                                    <li><a href="#"><span class="tt-badge">photodune</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-1 ml-auto show-mobile">
+                                <div class="tt-value">5d</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tt-col-category"><span class="tt-color04 tt-badge">pets</span></div>
+                    <div class="tt-col-value hide-mobile">674</div>
+                    <div class="tt-col-value tt-color-select hide-mobile">128</div>
+                    <div class="tt-col-value hide-mobile">1.3k</div>
+                    <div class="tt-col-value hide-mobile">5d</div>
+                </div>
+                <div class="tt-row-btn">
+                    <button type="button" class="btn-icon js-topiclist-showmore">
+                        <svg class="tt-icon">
+                            <use xlink:href="#icon-load_lore_icon"></use>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
-    </body>
+    </main>
+
+    <div id="js-popup-settings" class="tt-popup-settings">
+        <div class="tt-btn-col-close">
+            <a href="#">
+                <span class="tt-icon-title">
+                    <svg>
+                        <use xlink:href="#icon-settings_fill"></use>
+                    </svg>
+                </span>
+                <span class="tt-icon-text">
+                    Settings
+                </span>
+                <span class="tt-icon-close">
+                    <svg>
+                        <use xlink:href="#icon-cancel"></use>
+                    </svg>
+                </span>
+            </a>
+        </div>
+        <form class="form-default">
+            <div class="tt-form-upload">
+                <div class="row no-gutter">
+                    <div class="col-auto">
+                        <div class="tt-avatar">
+                            <svg>
+                                <use xlink:href="#icon-ava-d"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="col-auto ml-auto">
+                        <a href="#" class="btn btn-primary">Upload Picture</a>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="settingsUserName">Username</label>
+                <input type="text" name="name" class="form-control" id="settingsUserName"
+                    placeholder="azyrusmax">
+            </div>
+            <div class="form-group">
+                <label for="settingsUserEmail">Email</label>
+                <input type="text" name="name" class="form-control" id="settingsUserEmail"
+                    placeholder="Sample@sample.com">
+            </div>
+            <div class="form-group">
+                <label for="settingsUserPassword">Password</label>
+                <input type="password" name="name" class="form-control" id="settingsUserPassword"
+                    placeholder="************">
+            </div>
+            <div class="form-group">
+                <label for="settingsUserLocation">Location</label>
+                <input type="text" name="name" class="form-control" id="settingsUserLocation"
+                    placeholder="Slovakia">
+            </div>
+            <div class="form-group">
+                <label for="settingsUserWebsite">Website</label>
+                <input type="text" name="name" class="form-control" id="settingsUserWebsite"
+                    placeholder="Sample.com">
+            </div>
+            <div class="form-group">
+                <label for="settingsUserAbout">About</label>
+                <textarea name="" placeholder="Few words about you" class="form-control" id="settingsUserAbout"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="settingsUserAbout">Notify me via Email</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="settingsCheckBox01" name="checkbox">
+                    <label for="settingsCheckBox01">
+                        <span class="check"></span>
+                        <span class="box"></span>
+                        <span class="tt-text">When someone replies to my thread</span>
+                    </label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="settingsCheckBox02" name="checkbox">
+                    <label for="settingsCheckBox02">
+                        <span class="check"></span>
+                        <span class="box"></span>
+                        <span class="tt-text">When someone likes my thread or reply</span>
+                    </label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="settingsCheckBox03" name="checkbox">
+                    <label for="settingsCheckBox03">
+                        <span class="check"></span>
+                        <span class="box"></span>
+                        <span class="tt-text">When someone mentions me</span>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <a href="#" class="btn btn-secondary">Save</a>
+            </div>
+        </form>
+    </div>
+
+    <a href="page-create-topic.html" class="tt-btn-create-topic">
+        <span class="tt-icon">
+            <svg>
+                <use xlink:href="#icon-create_new"></use>
+            </svg>
+        </span>
+    </a>
+
+    <div class="modal fade" id="modalAdvancedSearch" tabindex="-1" role="dialog" aria-label="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="tt-modal-advancedSearch">
+                    <div class="tt-modal-title">
+                        <i class="pt-icon">
+                            <svg>
+                                <use xlink:href="#icon-advanced_search"></use>
+                            </svg>
+                        </i>
+                        Advanced Search
+                        <a class="pt-close-modal" href="#" data-dismiss="modal">
+                            <svg class="icon">
+                                <use xlink:href="#icon-cancel"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <form class="form-default">
+                        <div class="form-group">
+                            <i class="pt-customInputIcon">
+                                <svg class="tt-icon">
+                                    <use xlink:href="#icon-search"></use>
+                                </svg>
+                            </i>
+                            <input type="text" name="name" class="form-control pt-customInputSearch"
+                                id="searchForum" placeholder="Search all forums">
+                        </div>
+                        <div class="form-group">
+                            <label for="searchName">Posted by</label>
+                            <input type="text" name="name" class="form-control" id="searchName"
+                                placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <label for="searchCategory">In Category</label>
+                            <input type="text" name="name" class="form-control" id="searchCategory"
+                                placeholder="Add Category">
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="searcCheckBox01" name="checkbox">
+                            <label for="searcCheckBox01">
+                                <span class="check"></span>
+                                <span class="box"></span>
+                                <span class="tt-text">Include all tags</span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>Only return topics/posts that...</label>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="searcCheckBox02" name="checkbox">
+                                <label for="searcCheckBox02">
+                                    <span class="check"></span>
+                                    <span class="box"></span>
+                                    <span class="tt-text">I liked</span>
+                                </label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="searcCheckBox03" name="checkbox">
+                                <label for="searcCheckBox03">
+                                    <span class="check"></span>
+                                    <span class="box"></span>
+                                    <span class="tt-text">are in my messages</span>
+                                </label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="searcCheckBox04" name="checkbox">
+                                <label for="searcCheckBox04">
+                                    <span class="check"></span>
+                                    <span class="box"></span>
+                                    <span class="tt-text">I’ve read</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" id="searchTop">
+                                <option>any</option>
+                                <option>value 01</option>
+                                <option>value 02</option>
+                                <option>value 03</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="searchaTopics">Where topics</label>
+                            <select class="form-control" id="searchaTopics">
+                                <option>any</option>
+                                <option>value 01</option>
+                                <option>value 02</option>
+                                <option>value 03</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="searchAdvTime">Posted</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <select class="form-control">
+                                        <option>any</option>
+                                        <option>value 01</option>
+                                        <option>value 02</option>
+                                        <option>value 03</option>
+                                    </select>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" name="name" class="form-control" id="searchAdvTime"
+                                        placeholder="dd-mm-yyyy">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="minPostCount">Minimum Post Count</label>
+                            <select class="form-control" id="minPostCount">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option selected>10</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <a href="#" class="btn btn-secondary btn-block">Search</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="{{ asset('js/bundle.js') }}"></script>
+
+<svg width="0" height="0" class="hidden">
+    <symbol aria-hidden="true" data-prefix="fab" data-icon="facebook-f" xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 264 512" id="facebook-f-brands">
+        <path fill="currentColor"
+            d="M215.8 85H264V3.6C255.7 2.5 227.1 0 193.8 0 124.3 0 76.7 42.4 76.7 120.3V192H0v91h76.7v229h94V283h73.6l11.7-91h-85.3v-62.7c0-26.3 7.3-44.3 45.1-44.3z">
+        </path>
+    </symbol>
+    <symbol aria-hidden="true" data-prefix="fab" data-icon="twitter" xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512" id="twitter-brands">
+        <path fill="currentColor"
+            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117 117" id="icon-advanced_search">
+        <path
+            d="M54 108C24.22 108 0 83.78 0 54S24.22 0 54 0s54 24.22 54 54-24.22 54-54 54zm0-99C29.19 9 9 29.19 9 54s20.19 45 45 45 45-20.19 45-45S78.81 9 54 9z">
+        </path>
+        <path
+            d="M112.5 117c-1.15 0-2.3-.44-3.18-1.32l-23.5-23.5a4.49 4.49 0 0 1 0-6.36 4.49 4.49 0 0 1 6.36 0l23.5 23.5a4.49 4.49 0 0 1 0 6.36c-.88.88-2.03 1.32-3.18 1.32zm-40-72h-37c-2.49 0-4.5-2.01-4.5-4.5s2.01-4.5 4.5-4.5h37c2.49 0 4.5 2.01 4.5 4.5S74.99 45 72.5 45zm-14 27h-23c-2.49 0-4.5-2.01-4.5-4.5s2.01-4.5 4.5-4.5h23c2.49 0 4.5 2.01 4.5 4.5S60.99 72 58.5 72z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81 45" id="icon-arrow_below">
+        <path
+            d="M40.5 45c-1.15 0-2.3-.44-3.18-1.32l-36-36a4.49 4.49 0 0 1 0-6.36 4.49 4.49 0 0 1 6.36 0L40.5 34.13 73.32 1.32a4.49 4.49 0 0 1 6.36 0 4.49 4.49 0 0 1 0 6.36l-36 36c-.88.88-2.03 1.32-3.18 1.32z"
+            fill="#666f74"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 81" id="icon-arrow_left">
+        <path
+            d="M40.5 81c-1.15 0-2.3-.44-3.18-1.32l-36-36a4.49 4.49 0 0 1 0-6.36l36-36a4.49 4.49 0 0 1 6.36 0 4.49 4.49 0 0 1 0 6.36L10.86 40.5l32.82 32.82a4.49 4.49 0 0 1 0 6.36c-.88.88-2.03 1.32-3.18 1.32z"
+            fill="#666f74"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-a">
+        <circle fill="#D81159" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF"
+            d="M90.854 98.959l-5.68-13.199h-27.44l-5.68 13.199h-10.4l25.52-56.399h8.4l25.521 56.399H90.854zM61.094 77.76h20.64l-10.32-24-10.32 24z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-b">
+        <circle fill="#218380" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF"
+            d="M92.375 74.799c1.785 2.4 2.68 5.334 2.68 8.801 0 4.8-1.721 8.561-5.16 11.279-3.439 2.721-8.174 4.08-14.2 4.08h-25.6V42.56h24.8c5.865 0 10.467 1.293 13.799 3.88 3.334 2.587 5 6.2 5 10.84 0 2.988-.787 5.574-2.359 7.76-1.574 2.188-3.748 3.788-6.52 4.8 3.251.907 5.771 2.559 7.56 4.959zm-32.201-8.48h13.041c7.092 0 10.639-2.64 10.639-7.92 0-2.666-.879-4.64-2.639-5.92s-4.428-1.92-8-1.92H60.174v15.76zm22.56 22.64c1.705-1.332 2.561-3.412 2.561-6.24 0-2.826-.869-4.932-2.602-6.319-1.732-1.386-4.439-2.08-8.119-2.08h-14.4v16.64h14.4c3.733-.001 6.453-.667 8.16-2.001z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-c">
+        <circle fill="#679436" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF"
+            d="M61.375 96.119c-4.134-2.372-7.308-5.746-9.52-10.119-2.214-4.373-3.32-9.467-3.32-15.281 0-5.812 1.106-10.892 3.32-15.239 2.212-4.346 5.386-7.706 9.52-10.08 4.132-2.373 8.972-3.56 14.52-3.56 3.785 0 7.359.587 10.721 1.76 3.359 1.174 6.186 2.827 8.479 4.96l-3.439 7.52c-2.561-2.026-5.094-3.506-7.6-4.44-2.508-.933-5.174-1.4-8-1.4-5.44 0-9.64 1.76-12.6 5.28-2.96 3.52-4.44 8.587-4.44 15.199 0 6.668 1.48 11.761 4.44 15.281 2.96 3.52 7.16 5.279 12.6 5.279 2.826 0 5.492-.467 8-1.4 2.506-.932 5.039-2.412 7.6-4.439l3.439 7.52c-2.293 2.135-5.119 3.788-8.479 4.961-3.361 1.172-6.936 1.76-10.721 1.76-5.548-.001-10.388-1.188-14.52-3.562z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-d">
+        <circle fill="#73D2DE" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF"
+            d="M49.254 42.56h20.8c9.227 0 16.387 2.467 21.48 7.4 5.092 4.934 7.64 11.854 7.64 20.759 0 8.908-2.548 15.841-7.64 20.801-5.094 4.96-12.254 7.439-21.48 7.439h-20.8V42.56zm20.16 48c12.96 0 19.439-6.612 19.439-19.841 0-13.172-6.479-19.759-19.439-19.759h-9.84v39.6h9.84z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-e">
+        <circle fill="#ABD1B5" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF"
+            d="M53.854 98.959V42.56h37.76v8.16h-27.68v15.52h26.08v8.08h-26.08v16.479h27.68v8.16h-37.76z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-f">
+        <circle fill="#9067C6" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF" d="M54.774 98.959V42.56h36.96v8.24h-26.8v15.36h25.2v8.24h-25.2v24.56h-10.16z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-g">
+        <circle fill="#CAC4CE" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF"
+            d="M95.135 68.479v27.04c-2.561 1.279-5.668 2.293-9.32 3.04a55.641 55.641 0 0 1-11.16 1.12c-5.813 0-10.854-1.16-15.12-3.48-4.268-2.32-7.534-5.652-9.8-10-2.268-4.346-3.4-9.506-3.4-15.48 0-5.919 1.133-11.052 3.4-15.399 2.266-4.346 5.492-7.68 9.68-10 4.187-2.32 9.106-3.48 14.76-3.48 3.946 0 7.652.574 11.12 1.72 3.466 1.147 6.346 2.788 8.64 4.92l-3.439 7.44c-2.614-2.026-5.188-3.48-7.721-4.36s-5.319-1.32-8.36-1.32c-5.813 0-10.199 1.72-13.159 5.16-2.96 3.44-4.44 8.547-4.44 15.319 0 13.868 6.08 20.801 18.24 20.801 3.626 0 7.253-.506 10.88-1.52V75.84h-12.16v-7.36h21.359z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-h">
+        <circle fill="#86BA90" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF"
+            d="M85.814 42.56h10.08v56.399h-10.08v-24.48h-28.88v24.479h-10.16V42.56h10.16v23.6h28.88v-23.6z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-i">
+        <circle fill="#DFA06E" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF" d="M66.174 98.959V42.56h10.32v56.399h-10.32z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-j">
+        <circle fill="#FC814A" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF"
+            d="M56.535 91.359l5.6-.4c4.746-.319 7.12-2.932 7.12-7.84V42.56h10.319v40.479c0 5.014-1.319 8.895-3.959 11.641-2.641 2.747-6.574 4.279-11.801 4.6l-6.56.4-.719-8.321z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-k">
+        <circle fill="#564256" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF"
+            d="M100.055 98.959H87.494l-26.16-26.24v26.24h-10.32V42.56h10.32v25.2l25.12-25.2h12.32l-27.28 27.12 28.561 29.279z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-l">
+        <circle fill="#2E6171" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF" d="M55.214 98.959V42.56h10.32v47.92h26.319v8.479H55.214z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-m">
+        <circle fill="#D4AFCD" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF"
+            d="M90.734 42.56h8.08v56.399h-9.12V61.68l-14.88 28.16h-6.88l-14.96-27.76.08 36.879h-9.12V42.56h8.16l19.36 36.88 19.28-36.88z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-n">
+        <circle fill="#7F7EFF" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF" d="M85.454 42.56h9.68v56.399h-7.76L57.134 59.6v39.359h-9.6V42.56h7.68l30.24 39.28V42.56z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-o">
+        <circle fill="#CC8B8C" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF"
+            d="M57.094 96.16c-4.027-2.348-7.134-5.707-9.32-10.08-2.188-4.373-3.28-9.493-3.28-15.361 0-5.866 1.08-10.972 3.24-15.319 2.16-4.346 5.266-7.692 9.32-10.04 4.053-2.346 8.826-3.52 14.321-3.52 5.492 0 10.252 1.174 14.279 3.52 4.025 2.348 7.119 5.694 9.279 10.04 2.16 4.348 3.24 9.454 3.24 15.319 0 5.868-1.094 10.988-3.279 15.361-2.188 4.373-5.295 7.732-9.32 10.08-4.027 2.347-8.76 3.52-14.199 3.52-5.495 0-10.254-1.173-14.281-3.52zm26.4-10.08c2.906-3.573 4.359-8.693 4.359-15.361 0-6.666-1.453-11.772-4.359-15.319-2.908-3.546-6.947-5.32-12.119-5.32-5.228 0-9.294 1.773-12.201 5.32-2.908 3.547-4.36 8.654-4.36 15.319 0 6.668 1.452 11.788 4.36 15.361 2.906 3.573 6.973 5.359 12.201 5.359 5.172 0 9.211-1.786 12.119-5.359z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-p">
+        <circle fill="#598181" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF"
+            d="M51.015 42.56h24.64c6.026 0 10.721 1.507 14.08 4.52 3.36 3.014 5.04 7.24 5.04 12.68 0 5.44-1.68 9.68-5.04 12.72-3.359 3.04-8.054 4.56-14.08 4.56h-14.32v21.92h-10.32v-56.4zm23.36 26.559c7.092 0 10.64-3.092 10.64-9.28 0-3.146-.88-5.48-2.64-7-1.761-1.52-4.428-2.28-8-2.28H61.334v18.56h13.041z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-q">
+        <circle fill="#4B244A" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF"
+            d="M86.814 98.92c.959.826 1.893 1.986 2.801 3.479l5.76 9.36-8.641 4.16-7.76-12.561c-1.494-2.453-4.027-3.68-7.6-3.68-5.495 0-10.254-1.173-14.281-3.52-4.027-2.348-7.134-5.707-9.32-10.08-2.188-4.373-3.28-9.493-3.28-15.361 0-5.866 1.093-10.972 3.28-15.319 2.186-4.346 5.292-7.692 9.32-10.04 4.026-2.346 8.786-3.52 14.281-3.52 5.439 0 10.172 1.174 14.199 3.52 4.025 2.348 7.133 5.694 9.32 10.04 2.186 4.348 3.279 9.454 3.279 15.319 0 6.4-1.268 11.881-3.799 16.441-2.535 4.559-6.174 7.879-10.92 9.959 1.281.376 2.401.977 3.361 1.803zm-3.32-12.84c2.906-3.573 4.359-8.693 4.359-15.361 0-6.666-1.453-11.772-4.359-15.319-2.908-3.546-6.947-5.32-12.119-5.32-5.228 0-9.294 1.773-12.201 5.32-2.908 3.547-4.36 8.654-4.36 15.319 0 6.668 1.452 11.788 4.36 15.361 2.906 3.573 6.973 5.359 12.201 5.359 5.172 0 9.211-1.786 12.119-5.359z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-r">
+        <circle fill="#7180B9" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF"
+            d="M96.895 98.959h-11.2l-9.681-18c-.907-1.705-2.027-2.906-3.359-3.6-1.334-.692-3.014-1.04-5.04-1.04h-7.84v22.64h-10.16V42.56h24.96c6.4 0 11.267 1.427 14.6 4.28 3.333 2.854 5 6.974 5 12.36 0 4.32-1.214 7.88-3.64 10.679-2.428 2.801-5.854 4.628-10.28 5.48 2.986.801 5.387 2.908 7.2 6.32l9.44 17.28zM81.694 66.2c1.813-1.466 2.72-3.72 2.72-6.76 0-3.092-.907-5.346-2.72-6.76-1.813-1.413-4.667-2.12-8.56-2.12h-13.44V68.4h13.44c3.893-.001 6.747-.733 8.56-2.2z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-s">
+        <circle fill="#69747C" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF"
+            d="M58.854 97.92c-3.788-1.173-6.987-2.826-9.6-4.961l3.44-7.52c2.72 2.08 5.586 3.6 8.6 4.561 3.013.959 6.28 1.439 9.799 1.439 3.893 0 6.894-.68 9.001-2.04 2.106-1.36 3.16-3.267 3.16-5.72 0-2.133-.975-3.76-2.921-4.881-1.947-1.119-5.188-2.186-9.72-3.199-4.693-1.013-8.507-2.187-11.44-3.52-2.934-1.333-5.147-3.041-6.64-5.121-1.494-2.08-2.24-4.72-2.24-7.92 0-3.306.906-6.266 2.72-8.88 1.813-2.613 4.372-4.653 7.68-6.12 3.306-1.466 7.12-2.2 11.44-2.2 3.945 0 7.706.6 11.279 1.8 3.573 1.2 6.507 2.84 8.801 4.92l-3.44 7.52c-5.014-4-10.56-6-16.64-6-3.628 0-6.494.733-8.6 2.2-2.108 1.468-3.16 3.508-3.16 6.12 0 2.188.933 3.868 2.8 5.04 1.866 1.174 5.04 2.268 9.52 3.28 4.747 1.068 8.601 2.254 11.561 3.56 2.96 1.308 5.226 2.975 6.8 5 1.572 2.027 2.359 4.588 2.359 7.68 0 3.36-.894 6.309-2.68 8.84-1.787 2.534-4.374 4.48-7.76 5.841-3.388 1.36-7.374 2.04-11.96 2.04-4.319.001-8.372-.587-12.159-1.759z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-t">
+        <circle fill="#00BD9D" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF" d="M66.174 98.959V51.04h-18.4v-8.48h47.12v8.48h-18.4v47.919h-10.32z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-u">
+        <circle fill="#F9BC64" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF"
+            d="M53.774 93.68c-4-4-6-9.84-6-17.52v-33.6h10.08v34.159c0 4.854 1.146 8.521 3.44 11 2.292 2.48 5.653 3.721 10.081 3.721 4.372 0 7.706-1.252 10-3.76 2.292-2.506 3.439-6.16 3.439-10.961V42.56h10.08v33.6c0 7.627-2 13.453-6 17.479-4 4.027-9.84 6.04-17.52 6.04-7.733.001-13.6-1.999-17.6-5.999z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-v">
+        <circle fill="#4A6FA5" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF" d="M90.215 42.56h10.479l-25.12 56.399h-8.4L42.054 42.56h10.64l18.72 43.601L90.215 42.56z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-w">
+        <circle fill="#D9B26F" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF"
+            d="M103.975 42.56h9.84l-19.92 56.399h-8.4l-14.16-40.56-14.239 40.56h-8.4L28.854 42.56h10.4l14 42 14.72-42h7.279l14.32 42.239 14.402-42.239z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-x">
+        <circle fill="#9B6A6C" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF"
+            d="M77.174 70.319l21.44 28.64h-12L71.334 77.84 55.975 98.959h-12l21.52-28.72-20.72-27.68h12l14.56 20.24 14.641-20.24h12l-20.802 27.76z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-y">
+        <circle fill="#A15E49" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF"
+            d="M99.375 42.56L76.494 72.959v26h-10.32v-26l-22.8-30.399h11.6l16.32 22.16 16.4-22.16h11.681z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 144" id="icon-ava-z">
+        <circle fill="#84A2A3" cx="72" cy="72" r="72"></circle>
+        <path fill="#FFF"
+            d="M62.614 90.719h30.001v8.24H51.094v-7.52l28.96-40.64h-28.96v-8.24h40.64V50l-29.12 40.719z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126 108" id="icon-blockquote">
+        <path
+            d="M112.5 54h-27C75.6 54 72 45.93 72 40.5v-27C72 3.6 80.07 0 85.5 0h27c9.9 0 13.5 8.07 13.5 13.5v27c0 9.9-8.07 13.5-13.5 13.5z">
+        </path>
+        <path
+            d="M85.5 108c-2.48 0-4.5-2.02-4.5-4.5s2.02-4.5 4.5-4.5c31.14 0 31.5-30.21 31.5-31.5v-27a4.5 4.5 0 0 1 9 0v27c0 .41-.06 10.18-4.97 20.01C116.35 96.86 106.4 108 85.5 108zm-45-54h-27C3.6 54 0 45.93 0 40.5v-27C0 3.6 8.07 0 13.5 0h27C50.4 0 54 8.07 54 13.5v27C54 50.4 45.93 54 40.5 54z">
+        </path>
+        <path
+            d="M13.5 108c-2.48 0-4.5-2.02-4.5-4.5s2.02-4.5 4.5-4.5C44.64 99 45 68.79 45 67.5v-27c0-2.49 2.01-4.5 4.5-4.5s4.5 2.01 4.5 4.5v27c0 .41-.06 10.18-4.97 20.01C44.35 96.86 34.4 108 13.5 108z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 117" id="icon-bold">
+        <path
+            d="M58.5 117h-45a4.5 4.5 0 0 1-4.5-4.5V4.5C9 2.02 11.02 0 13.5 0h45C75.87 0 90 14.13 90 31.5c0 11.44-6.14 21.48-15.29 27C83.86 64.02 90 74.06 90 85.5c0 17.37-14.13 31.5-31.5 31.5zM18 108h40.5C70.91 108 81 97.91 81 85.5S70.91 63 58.5 63h-18c-2.49 0-4.5-2.01-4.5-4.5s2.01-4.5 4.5-4.5h18C70.91 54 81 43.91 81 31.5S70.91 9 58.5 9H18v99z">
+        </path>
+        <path
+            d="M13.5 9h-9a4.5 4.5 0 0 1 0-9h9C15.98 0 18 2.02 18 4.5S15.98 9 13.5 9zm0 108h-9a4.5 4.5 0 0 1 0-9h9a4.5 4.5 0 0 1 0 9z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112.5 108" id="icon-bullet_list">
+        <circle cx="9" cy="9" r="9"></circle>
+        <path d="M108 13.5H36a4.5 4.5 0 0 1 0-9h72a4.5 4.5 0 0 1 0 9z"></path>
+        <circle cx="9" cy="54" r="9"></circle>
+        <path d="M90 58.5H36c-2.49 0-4.5-2.01-4.5-4.5s2.01-4.5 4.5-4.5h54c2.49 0 4.5 2.01 4.5 4.5s-2.01 4.5-4.5 4.5z">
+        </path>
+        <circle cx="9" cy="99" r="9"></circle>
+        <path d="M108 103.5H36c-2.49 0-4.5-2.01-4.5-4.5s2.01-4.5 4.5-4.5h72c2.49 0 4.5 2.01 4.5 4.5s-2.01 4.5-4.5 4.5z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81 81" id="icon-cancel">
+        <path
+            d="M76.5 81c-1.15 0-2.3-.44-3.18-1.32l-72-72a4.49 4.49 0 0 1 0-6.36 4.49 4.49 0 0 1 6.36 0l72 72a4.49 4.49 0 0 1 0 6.36c-.88.88-2.03 1.32-3.18 1.32z">
+        </path>
+        <path
+            d="M4.5 81c-1.15 0-2.3-.44-3.18-1.32a4.49 4.49 0 0 1 0-6.36l72-72a4.49 4.49 0 0 1 6.36 0 4.49 4.49 0 0 1 0 6.36l-72 72C6.8 80.56 5.65 81 4.5 81z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.9 122.79" id="icon-color_picker">
+        <path
+            d="M67.61 36.38a5.003 5.003 0 0 1 0-7.07l25.1-25.1c5.75-5.75 14.91-5.59 20.86.35l4.95 4.95c5.85 5.85 5.85 15.36 0 21.21L93.77 55.48c-.98.98-2.26 1.46-3.54 1.46s-2.56-.49-3.54-1.46">
+        </path>
+        <path
+            d="M96.6 62.81c-1.15 0-2.31-.44-3.18-1.32L61.59 29.67a4.49 4.49 0 0 1 0-6.36 4.49 4.49 0 0 1 6.36 0l31.82 31.82a4.49 4.49 0 0 1 0 6.36c-.87.88-2.02 1.32-3.17 1.32z">
+        </path>
+        <path
+            d="M34.82 113.72H18.36l-9-9V88.26l58.59-58.59a4.49 4.49 0 0 1 6.36 0 4.49 4.49 0 0 1 0 6.36L18.36 91.99v9l3.73 3.73h9l55.96-55.96a4.49 4.49 0 0 1 6.36 0 4.49 4.49 0 0 1 0 6.36l-58.59 58.6z">
+        </path>
+        <path
+            d="M6.5 122.79a6.53 6.53 0 0 1-4.6-1.9 6.494 6.494 0 0 1 0-9.19l8.51-8.51a6.494 6.494 0 0 1 9.19 0 6.494 6.494 0 0 1 0 9.19l-8.51 8.51a6.49 6.49 0 0 1-4.59 1.9z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 161.51 161.51" id="icon-create_new">
+        <circle cx="80.76" cy="80.76" r="80.76" fill="#3571b8"></circle>
+        <path d="M80.76 121.26c-2.49 0-4.5-2.01-4.5-4.5v-72a4.5 4.5 0 0 1 9 0v72c0 2.48-2.02 4.5-4.5 4.5z"></path>
+        <path d="M116.76 85.26h-72a4.5 4.5 0 0 1 0-9h72a4.5 4.5 0 0 1 0 9z"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111 111" id="icon-discussion">
+        <path
+            d="M5.5 2C3.3 2 1 3.3 1 5.5v82C1 89.7 3.3 92 5.5 92H70c2.2 0 4.81 1.36 5.81 3.32l5.38 10.49c.99 1.96 2.62 1.9 3.62-.06l5.38-10.4C91.19 93.39 93.8 92 96 92h9.5c2.2 0 3.5-2.3 3.5-4.5v-82c0-2.2-1.3-3.5-3.5-3.5H5.5z"
+            fill="#fff"></path>
+        <path
+            d="M83 108.65c-1.26 0-2.41-.84-3.15-2.29l-5.38-10.61C73.73 94.28 71.64 93 70 93H5.5A5.51 5.51 0 0 1 0 87.5v-82C0 2.47 2.47 0 5.5 0h100c3.03 0 5.5 2.47 5.5 5.5v82c0 3.03-2.47 5.5-5.5 5.5H96c-1.64 0-3.73 1.28-4.47 2.75l-5.38 10.62c-.74 1.45-1.89 2.28-3.15 2.28zM5.5 3A2.5 2.5 0 0 0 3 5.5v82A2.5 2.5 0 0 0 5.5 90H70c2.76 0 5.9 1.93 7.15 4.39L82.53 105c.24.47.46.63.51.66-.03-.02.19-.19.43-.66l5.38-10.62C90.1 91.93 93.24 90 96 90h9.5a2.5 2.5 0 0 0 2.5-2.5v-82a2.5 2.5 0 0 0-2.5-2.5H5.5z">
+        </path>
+        <path
+            d="M101 111H56c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5h45c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5zm-54 0H29c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5h18c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5zm36-81H20c-.83 0-1.5-.67-1.5-1.5S19.17 27 20 27h63c.83 0 1.5.67 1.5 1.5S83.83 30 83 30zM65 48H20c-.83 0-1.5-.67-1.5-1.5S19.17 45 20 45h45c.83 0 1.5.67 1.5 1.5S65.83 48 65 48zm18 18H20c-.83 0-1.5-.67-1.5-1.5S19.17 63 20 63h63c.83 0 1.5.67 1.5 1.5S83.83 66 83 66z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98 79" id="icon-dislike">
+        <path
+            d="M12 0h56c1.66 0 3 1.34 3 3v45c0 1.66-1.34 3-3 3h-9.73L32.16 78.08c-.57.59-1.35.92-2.16.92h-.01c-.82 0-1.6-.34-2.16-.94l-9-9.5a3 3 0 0 1-.52-3.38L25.2 51H3c-.9 0-1.75-.4-2.32-1.1-.57-.69-.8-1.61-.62-2.49l9-45C9.34 1.01 10.57 0 12 0zm74 0h9c1.66 0 3 1.34 3 3v45c0 1.66-1.34 3-3 3h-9c-1.66 0-3-1.34-3-3V3c0-1.66 1.34-3 3-3z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135 135" id="icon-emoticon">
+        <path
+            d="M67.5 135C30.28 135 0 104.72 0 67.5S30.28 0 67.5 0 135 30.28 135 67.5 104.72 135 67.5 135zm0-126C35.24 9 9 35.24 9 67.5S35.24 126 67.5 126 126 99.76 126 67.5 99.76 9 67.5 9z">
+        </path>
+        <path
+            d="M96 63c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9zm-57 0c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9zm29.52 43c-4.67 0-8.94-.9-12.57-2.1-11.01-3.67-18.33-10.91-18.63-11.21a4.49 4.49 0 0 1 0-6.36 4.509 4.509 0 0 1 6.36-.01c.98.97 24.22 23.43 47.65.01a4.49 4.49 0 0 1 6.36 0 4.49 4.49 0 0 1 0 6.36C87.52 102.84 77.3 106 68.52 106z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 159 186" id="icon-enter">
+        <path fill="#3471b8" d="M84 183V39l72-36v144z" opacity=".4"></path>
+        <path
+            d="M156 150c-1.66 0-3-1.34-3-3V6H33v33c0 1.66-1.34 3-3 3s-3-1.34-3-3V3c0-1.66 1.34-3 3-3h126c1.66 0 3 1.34 3 3v144c0 1.66-1.34 3-3 3z">
+        </path>
+        <path
+            d="M84 186a2.995 2.995 0 0 1-3-3V39c0-1.14.64-2.17 1.66-2.68l72-36a3.01 3.01 0 0 1 4.03 1.34 3.01 3.01 0 0 1-1.34 4.03L87 40.85v137.29l67.66-33.83a3.01 3.01 0 0 1 4.03 1.34 3.01 3.01 0 0 1-1.34 4.03l-72 36c-.43.21-.89.32-1.35.32z">
+        </path>
+        <path
+            d="M84 150H30c-1.66 0-3-1.34-3-3v-36c0-1.66 1.34-3 3-3s3 1.34 3 3v33h51c1.66 0 3 1.34 3 3s-1.34 3-3 3zm18-27c-1.66 0-3-1.34-3-3v-18c0-1.66 1.34-3 3-3s3 1.34 3 3v18c0 1.66-1.34 3-3 3zM57 78H3c-1.66 0-3-1.34-3-3s1.34-3 3-3h54c1.66 0 3 1.34 3 3s-1.34 3-3 3z">
+        </path>
+        <path
+            d="M39 96c-.77 0-1.54-.29-2.12-.88a3 3 0 0 1 0-4.24L52.76 75 36.88 59.12a3 3 0 0 1 0-4.24 3 3 0 0 1 4.24 0l18 18a3 3 0 0 1 0 4.24l-18 18c-.58.59-1.35.88-2.12.88z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 353.07 183.57" id="icon-error_404">
+        <style type="text/css">
+            .st0 {
+                fill: #E6E6E6;
+            }
+
+            .st1 {
+                fill: #CCCCCC;
+            }
+
+            .st2 {
+                fill: #B3B3B3;
+            }
+
+            .st3 {
+                fill: #3471B8;
+            }
+
+            .st4 {
+                fill: #F2F2F2;
+            }
+
+            .st5 {
+                opacity: 0.35;
+            }
+
+            .st6 {
+                opacity: 0.42;
+            }
+
+            .st7 {
+                fill: #808080;
+            }
+
+            .st8 {
+                fill: #677075;
+            }
+        </style>
+        <g>
+            <path class="st0" d="M290.06,54H40.94C37.66,54,35,51.34,35,48.06V5.94C35,2.66,37.66,0,40.94,0h249.13c3.28,0,5.94,2.66,5.94,5.94
+       v42.13C296,51.34,293.34,54,290.06,54z" />
+        </g>
+        <g>
+            <path class="st1"
+                d="M62,38.5c-6.34,0-11.5-5.16-11.5-11.5S55.66,15.5,62,15.5S73.5,20.66,73.5,27S68.34,38.5,62,38.5z" />
+        </g>
+        <g>
+            <path class="st2"
+                d="M270,20.5H89c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5h181c1.38,0,2.5,1.12,2.5,2.5S271.38,20.5,270,20.5z" />
+        </g>
+        <g>
+            <path class="st2"
+                d="M143,38.5H89c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5h54c1.38,0,2.5,1.12,2.5,2.5S144.38,38.5,143,38.5z" />
+        </g>
+        <g>
+            <path class="st3" d="M255.06,118H5.94C2.66,118,0,115.34,0,112.06V69.94C0,66.66,2.66,64,5.94,64h249.13
+       c3.28,0,5.94,2.66,5.94,5.94v42.13C261,115.34,258.34,118,255.06,118z" />
+        </g>
+        <g>
+            <path class="st4"
+                d="M27,102.5c-6.34,0-11.5-5.16-11.5-11.5S20.66,79.5,27,79.5S38.5,84.66,38.5,91S33.34,102.5,27,102.5z" />
+        </g>
+        <g>
+            <g>
+                <path class="st4"
+                    d="M60,84.5h-6c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5h6c1.38,0,2.5,1.12,2.5,2.5S61.38,84.5,60,84.5z" />
+            </g>
+            <g>
+                <path class="st4" d="M189.73,84.5h-12.16c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5h12.16c1.38,0,2.5,1.12,2.5,2.5
+           S191.11,84.5,189.73,84.5z M157.3,84.5h-12.16c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5h12.16c1.38,0,2.5,1.12,2.5,2.5
+           S158.68,84.5,157.3,84.5z M124.87,84.5H112.7c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5h12.16c1.38,0,2.5,1.12,2.5,2.5
+           S126.25,84.5,124.87,84.5z M92.43,84.5H80.27c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5h12.16c1.38,0,2.5,1.12,2.5,2.5
+           S93.81,84.5,92.43,84.5z" />
+            </g>
+            <g>
+                <path class="st4"
+                    d="M216,84.5h-6c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5h6c1.38,0,2.5,1.12,2.5,2.5S217.38,84.5,216,84.5z" />
+            </g>
+        </g>
+        <g class="st5">
+            <path class="st4" d="M134,102.5h-16c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5h16c1.38,0,2.5,1.12,2.5,2.5S135.38,102.5,134,102.5
+       z M102,102.5H86c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5h16c1.38,0,2.5,1.12,2.5,2.5S103.38,102.5,102,102.5z M70,102.5H54
+       c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5h16c1.38,0,2.5,1.12,2.5,2.5S71.38,102.5,70,102.5z" />
+        </g>
+        <g>
+            <path class="st0" d="M290.06,181H40.94c-3.28,0-5.94-2.66-5.94-5.94v-42.13c0-3.28,2.66-5.94,5.94-5.94h249.13
+       c3.28,0,5.94,2.66,5.94,5.94v42.13C296,178.34,293.34,181,290.06,181z" />
+        </g>
+        <g>
+            <path class="st1"
+                d="M62,165.5c-6.34,0-11.5-5.16-11.5-11.5s5.16-11.5,11.5-11.5s11.5,5.16,11.5,11.5S68.34,165.5,62,165.5z" />
+        </g>
+        <g>
+            <path class="st2" d="M224,147.5H89c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5h135c1.38,0,2.5,1.12,2.5,2.5S225.38,147.5,224,147.5
+       z" />
+        </g>
+        <g>
+            <path class="st2" d="M152,165.5H89c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5h63c1.38,0,2.5,1.12,2.5,2.5S153.38,165.5,152,165.5z
+       " />
+        </g>
+        <g class="st6">
+            <path class="st7" d="M276.02,166.51c-15.37,0-30.74-5.85-42.44-17.55c-23.4-23.4-23.4-61.48,0-84.88c23.4-23.4,61.48-23.4,84.88,0
+       l0,0c23.4,23.4,23.4,61.48,0,84.88C306.76,160.66,291.39,166.51,276.02,166.51z M276.02,50.53c-14.35,0-28.69,5.46-39.61,16.38
+       c-21.84,21.84-21.84,57.38,0,79.22c21.84,21.84,57.38,21.84,79.22,0c21.84-21.84,21.84-57.38,0-79.22
+       C304.71,55.99,290.36,50.53,276.02,50.53z" />
+        </g>
+        <g>
+            <circle class="st4" cx="276.02" cy="106.52" r="36" />
+            <path class="st8" d="M276.02,145.52c-10.42,0-20.21-4.06-27.58-11.42s-11.42-17.16-11.42-27.58c0-10.42,4.06-20.21,11.42-27.58
+       c7.37-7.37,17.16-11.42,27.58-11.42c10.42,0,20.21,4.06,27.58,11.42l0,0l0,0c7.37,7.37,11.42,17.16,11.42,27.58
+       c0,10.42-4.06,20.21-11.42,27.58C296.23,141.46,286.44,145.52,276.02,145.52z M276.02,73.52c-8.81,0-17.1,3.43-23.33,9.67
+       c-6.23,6.23-9.67,14.52-9.67,23.33c0,8.82,3.43,17.1,9.67,23.33c6.23,6.23,14.52,9.67,23.33,9.67c8.82,0,17.1-3.43,23.33-9.67
+       s9.67-14.52,9.67-23.33c0-8.81-3.43-17.1-9.67-23.33l0,0C293.12,76.95,284.83,73.52,276.02,73.52z" />
+        </g>
+        <g>
+            <path class="st8" d="M301.48,143.97c-3.07,0-6.15-1.17-8.49-3.51c-1.17-1.17-1.17-3.07,0-4.24c1.17-1.17,3.07-1.17,4.24,0
+       c2.34,2.34,6.15,2.34,8.49,0c2.34-2.34,2.34-6.15,0-8.49c-1.17-1.17-1.17-3.07,0-4.24c1.17-1.17,3.07-1.17,4.24,0
+       c4.68,4.68,4.68,12.29,0,16.97C307.62,142.8,304.55,143.97,301.48,143.97z" />
+        </g>
+        <g>
+            <path class="st8" d="M341.07,183.57c-3.07,0-6.15-1.17-8.48-3.51l-18.38-18.38c-4.68-4.68-4.68-12.29,0-16.97
+       c4.68-4.68,12.29-4.68,16.97,0l18.38,18.38c4.68,4.68,4.68,12.29,0,16.97C347.22,182.4,344.15,183.57,341.07,183.57z
+        M322.69,147.19c-1.54,0-3.07,0.58-4.24,1.75c-2.34,2.34-2.34,6.15,0,8.49l18.38,18.38c2.34,2.34,6.15,2.34,8.49,0
+       c2.34-2.34,2.34-6.15,0-8.49l-18.38-18.38C325.76,147.78,324.22,147.19,322.69,147.19z" />
+        </g>
+        <g>
+            <path class="st8" d="M316.32,149.82c-0.77,0-1.54-0.29-2.12-0.88l-8.49-8.49c-1.17-1.17-1.17-3.07,0-4.24
+       c1.17-1.17,3.07-1.17,4.24,0l8.49,8.49c1.17,1.17,1.17,3.07,0,4.24C317.86,149.53,317.09,149.82,316.32,149.82z" />
+        </g>
+        <g>
+            <path class="st8" d="M339.66,173.16c-0.77,0-1.54-0.29-2.12-0.88c-1.17-1.17-1.17-3.07,0-4.24l6.36-6.36
+       c1.17-1.17,3.07-1.17,4.24,0c1.17,1.17,1.17,3.07,0,4.24l-6.36,6.36C341.19,172.87,340.43,173.16,339.66,173.16z" />
+        </g>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 159 186" id="icon-exit">
+        <path fill="#980b3e" d="M84 183V39l72-36v144z" opacity=".4"></path>
+        <path
+            d="M156 150c-1.66 0-3-1.34-3-3V6H33v33c0 1.66-1.34 3-3 3s-3-1.34-3-3V3c0-1.66 1.34-3 3-3h126c1.66 0 3 1.34 3 3v144c0 1.66-1.34 3-3 3z">
+        </path>
+        <path
+            d="M84 186c-.55 0-1.1-.15-1.58-.45A3.008 3.008 0 0 1 81 183V39c0-1.14.64-2.17 1.66-2.68l72-36c1.48-.74 3.28-.14 4.02 1.34a3.01 3.01 0 0 1-1.34 4.03L87 40.85v137.29l67.66-33.83c1.48-.74 3.28-.14 4.02 1.34a3.01 3.01 0 0 1-1.34 4.03l-72 36c-.42.21-.88.32-1.34.32z">
+        </path>
+        <path
+            d="M84 150H30c-1.66 0-3-1.34-3-3v-36c0-1.66 1.34-3 3-3s3 1.34 3 3v33h51c1.66 0 3 1.34 3 3s-1.34 3-3 3zm18-27c-1.66 0-3-1.34-3-3v-18c0-1.66 1.34-3 3-3s3 1.34 3 3v18c0 1.66-1.34 3-3 3zM57 78H3c-1.66 0-3-1.34-3-3s1.34-3 3-3h54c1.66 0 3 1.34 3 3s-1.34 3-3 3z">
+        </path>
+        <path
+            d="M21 96c-.77 0-1.54-.29-2.12-.88l-18-18a3 3 0 0 1 0-4.24l18-18a3 3 0 0 1 4.24 0 3 3 0 0 1 0 4.24L7.24 75l15.88 15.88a3 3 0 0 1 0 4.24c-.58.59-1.35.88-2.12.88z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117 103.5" id="icon-favorite">
+        <path
+            d="M58.5 103.5c-8.9 0-23.73-8.36-35.24-19.88C8.26 68.62 0 50.11 0 31.5 0 14.13 14.13 0 31.5 0c11.44 0 21.48 6.14 27 15.29C64.02 6.14 74.06 0 85.5 0 102.87 0 117 14.13 117 31.5c0 18.61-8.26 37.12-23.26 52.12C82.22 95.14 67.4 103.5 58.5 103.5z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 71.67" id="icon-filter">
+        <path
+            d="M9.5 40.67h-5c-2.49 0-4.5-2.01-4.5-4.5s2.01-4.5 4.5-4.5h5c2.49 0 4.5 2.01 4.5 4.5s-2.01 4.5-4.5 4.5zm58 0H46.17c-2.49 0-4.5-2.01-4.5-4.5s2.01-4.5 4.5-4.5H67.5c2.49 0 4.5 2.01 4.5 4.5s-2.01 4.5-4.5 4.5zM28.5 45c-4.87 0-8.83-3.96-8.83-8.83s3.96-8.83 8.83-8.83 8.83 3.96 8.83 8.83S33.37 45 28.5 45zm0-9c-.09 0-.17.07-.17.17 0 .18.33.18.33 0 .01-.1-.07-.17-.16-.17zm-1-22.67h-23c-2.49 0-4.5-2.01-4.5-4.5s2.01-4.5 4.5-4.5h23c2.49 0 4.5 2.01 4.5 4.5s-2.01 4.5-4.5 4.5zm40 0h-3.33c-2.49 0-4.5-2.01-4.5-4.5s2.01-4.5 4.5-4.5h3.33c2.49 0 4.5 2.01 4.5 4.5s-2.01 4.5-4.5 4.5zm-21 4.34c-4.87 0-8.83-3.96-8.83-8.83S41.63 0 46.5 0s8.83 3.96 8.83 8.83-3.96 8.84-8.83 8.84zm0-9c-.09 0-.17.07-.17.17 0 .18.33.18.33 0 .01-.1-.07-.17-.16-.17zm-19 58.66h-23c-2.49 0-4.5-2.01-4.5-4.5s2.01-4.5 4.5-4.5h23c2.49 0 4.5 2.01 4.5 4.5s-2.01 4.5-4.5 4.5zm40 0h-3.33c-2.49 0-4.5-2.01-4.5-4.5s2.01-4.5 4.5-4.5h3.33c2.49 0 4.5 2.01 4.5 4.5s-2.01 4.5-4.5 4.5zm-21 4.34c-4.87 0-8.83-3.96-8.83-8.83S41.63 54 46.5 54s8.83 3.96 8.83 8.83-3.96 8.84-8.83 8.84zm0-9c-.09 0-.17.08-.17.17 0 .18.33.18.33 0 .01-.1-.07-.17-.16-.17z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81 117" id="icon-flag">
+        <path
+            d="M4.5 117c-2.49 0-4.5-2.01-4.5-4.5V4.5C0 2.94.81 1.49 2.13.67c1.33-.82 2.98-.89 4.38-.2l72 36c1.53.77 2.49 2.33 2.49 4.03s-.96 3.26-2.49 4.02L9 79.28v33.22c0 2.49-2.01 4.5-4.5 4.5z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111 111" id="icon-gallery">
+        <path
+            d="M5.5 2C3.3 2 1 3.3 1 5.5v82C1 89.7 3.3 92 5.5 92H70c2.2 0 4.81 1.36 5.81 3.32l5.38 10.49c.99 1.96 2.62 1.9 3.62-.06l5.38-10.4C91.19 93.39 93.8 92 96 92h9.5c2.2 0 3.5-2.3 3.5-4.5v-82c0-2.2-1.3-3.5-3.5-3.5H5.5z"
+            fill="#fff"></path>
+        <path
+            d="M83 108.65c-1.26 0-2.41-.84-3.15-2.29l-5.38-10.61C73.73 94.28 71.64 93 70 93H5.5A5.51 5.51 0 0 1 0 87.5v-82C0 2.47 2.47 0 5.5 0h100c3.03 0 5.5 2.47 5.5 5.5v82c0 3.03-2.47 5.5-5.5 5.5H96c-1.64 0-3.73 1.28-4.47 2.75l-5.38 10.62c-.74 1.45-1.89 2.28-3.15 2.28zM5.5 3A2.5 2.5 0 0 0 3 5.5v82A2.5 2.5 0 0 0 5.5 90H70c2.76 0 5.9 1.93 7.15 4.39L82.53 105c.24.47.46.63.51.66-.03-.02.19-.19.43-.66l5.38-10.62C90.1 91.93 93.24 90 96 90h9.5a2.5 2.5 0 0 0 2.5-2.5v-82a2.5 2.5 0 0 0-2.5-2.5H5.5z">
+        </path>
+        <path
+            d="M101 111H56c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5h45c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5zm-54 0H29c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5h18c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5zM11 18h24.55v24.55H11zm32.73 0h24.55v24.55H43.73zm32.73 0H101v24.55H76.46zM11 50.46h24.55V75H11zm32.73 0h24.55V75H43.73z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 99 117" id="icon-heading">
+        <path d="M22.5 9h-18a4.5 4.5 0 0 1 0-9h18a4.5 4.5 0 0 1 0 9z"></path>
+        <path d="M13.5 117a4.5 4.5 0 0 1-4.5-4.5V4.5C9 2.02 11.02 0 13.5 0S18 2.02 18 4.5v108a4.5 4.5 0 0 1-4.5 4.5z">
+        </path>
+        <path
+            d="M22.5 117h-18a4.5 4.5 0 0 1 0-9h18c2.49 0 4.5 2.01 4.5 4.5s-2.01 4.5-4.5 4.5zm72-108h-18C74.01 9 72 6.99 72 4.5S74.01 0 76.5 0h18a4.5 4.5 0 0 1 0 9z">
+        </path>
+        <path d="M85.5 117c-2.49 0-4.5-2.01-4.5-4.5V4.5a4.5 4.5 0 0 1 9 0v108c0 2.49-2.01 4.5-4.5 4.5z"></path>
+        <path
+            d="M94.5 117h-18c-2.49 0-4.5-2.01-4.5-4.5s2.01-4.5 4.5-4.5h18c2.49 0 4.5 2.01 4.5 4.5s-2.01 4.5-4.5 4.5zm-9-54h-72a4.5 4.5 0 0 1 0-9h72c2.49 0 4.5 2.01 4.5 4.5S87.99 63 85.5 63z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117 9" id="icon-horizontal_line">
+        <path d="M112.5 9H4.5a4.5 4.5 0 0 1 0-9h108a4.5 4.5 0 0 1 0 9z" fill="#666f74"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81 117" id="icon-italic">
+        <path
+            d="M76.5 9h-45C29.01 9 27 6.99 27 4.5S29.01 0 31.5 0h45a4.5 4.5 0 0 1 0 9zm-27 108h-45a4.5 4.5 0 0 1 0-9h45c2.49 0 4.5 2.01 4.5 4.5s-2.01 4.5-4.5 4.5z">
+        </path>
+        <path
+            d="M22.5 117a4.504 4.504 0 0 1-4.27-5.92l36-108A4.508 4.508 0 0 1 59.92.23c2.36.79 3.63 3.33 2.85 5.69l-36 108A4.496 4.496 0 0 1 22.5 117z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98 79" id="icon-like">
+        <path
+            d="M86 79H30c-1.66 0-3-1.34-3-3V31c0-1.66 1.34-3 3-3h9.73L65.84.92C66.41.33 67.19 0 68 0h.01c.82 0 1.6.34 2.16.94l9 9.5a3 3 0 0 1 .52 3.38L72.8 28H95c.9 0 1.75.4 2.32 1.1.57.69.8 1.61.62 2.49l-9 45A2.999 2.999 0 0 1 86 79zm-74 0H3c-1.66 0-3-1.34-3-3V31c0-1.66 1.34-3 3-3h9c1.66 0 3 1.34 3 3v45c0 1.66-1.34 3-3 3z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 86" id="icon-load_lore_icon">
+        <path
+            d="M65 86H3c-1.66 0-3-1.34-3-3V21c0-1.66 1.34-3 3-3h62c1.66 0 3 1.34 3 3v62c0 1.66-1.34 3-3 3zM6 80h56V24H6v56z">
+        </path>
+        <path
+            d="M47 15c-1.66 0-3-1.34-3-3V6H24v6c0 1.66-1.34 3-3 3s-3-1.34-3-3V3c0-1.66 1.34-3 3-3h26c1.66 0 3 1.34 3 3v9c0 1.66-1.34 3-3 3z"
+            opacity=".25"></path>
+        <path
+            d="M34 69.33c-.77 0-1.54-.29-2.12-.88L21.21 57.79a3 3 0 0 1 0-4.24 3 3 0 0 1 4.24 0L34 62.09l8.54-8.54a3 3 0 0 1 4.24 0 3 3 0 0 1 0 4.24L36.12 68.45c-.58.59-1.35.88-2.12.88z">
+        </path>
+        <path d="M34 66c-1.66 0-3-1.34-3-3V37c0-1.66 1.34-3 3-3s3 1.34 3 3v26c0 1.66-1.34 3-3 3z"></path>
+        <path
+            d="M56 24c-1.66 0-3-1.34-3-3v-6H15v6c0 1.66-1.34 3-3 3s-3-1.34-3-3v-9c0-1.66 1.34-3 3-3h44c1.66 0 3 1.34 3 3v9c0 1.66-1.34 3-3 3z"
+            opacity=".5"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 99 130.16" id="icon-locked">
+        <path
+            d="M84.5 130.16h-70c-7.99 0-14.5-6.5-14.5-14.5v-52c0-7.99 6.51-14.5 14.5-14.5h70c8 0 14.5 6.51 14.5 14.5v52c0 7.99-6.5 14.5-14.5 14.5z">
+        </path>
+        <path
+            d="M75.49 64.32c-3.04 0-5.5-2.46-5.5-5.5V31.49C69.99 20.19 60.8 11 49.5 11s-20.49 9.19-20.49 20.49v27.33c0 3.04-2.46 5.5-5.5 5.5s-5.5-2.46-5.5-5.5V31.49C18.01 14.13 32.14 0 49.5 0s31.49 14.13 31.49 31.49v27.33c0 3.04-2.46 5.5-5.5 5.5z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 73 63" id="icon-menu_icon">
+        <path
+            d="M68.5 9h-64a4.5 4.5 0 0 1 0-9h64a4.5 4.5 0 0 1 0 9zm0 27h-64a4.5 4.5 0 0 1 0-9h64c2.49 0 4.5 2.01 4.5 4.5S70.99 36 68.5 36zm0 27h-64a4.5 4.5 0 0 1 0-9h64c2.49 0 4.5 2.01 4.5 4.5S70.99 63 68.5 63z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 108" id="icon-more_options">
+        <circle cx="9" cy="9" r="9"></circle>
+        <circle cx="9" cy="54" r="9"></circle>
+        <circle cx="9" cy="99" r="9"></circle>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117.97 144.98" id="icon-notification">
+        <path
+            d="M58.91 122.04c-29.78 0-50.46-7.89-51.75-8.4-.64-.25-1.23-.63-1.71-1.12-9.2-9.2-5.04-20.03 0-25.07 5.68-5.68 10.73-29.47 12.58-43.14.04-.31.11-.61.21-.91C25.37 22 37.99 15.65 44.98 13.77V8.98c0-1.33.53-2.6 1.46-3.54 5.04-5.04 15.88-9.2 25.07 0 .94.94 1.46 2.21 1.46 3.54v4.79c7 1.88 19.61 8.23 26.74 29.63.1.3.17.6.21.91 1.85 13.66 6.9 37.45 12.58 43.14 5.04 5.04 9.2 15.87 0 25.07-.55.55-1.22.96-1.95 1.21-18.67 6.23-36.36 8.31-51.64 8.31zm.57 22.94c-10.37 0-18.5-6.15-18.5-14 0-2.76 2.24-5 5-5h27c2.76 0 5 2.24 5 5 0 7.85-8.12 14-18.5 14z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.66 113.66" id="icon-pencil">
+        <path
+            d="M4.5 113.66c-1.18 0-2.33-.47-3.18-1.32a4.516 4.516 0 0 1-1.23-4.06l6.36-31.82a4.5 4.5 0 0 1 7.6-2.29L39.5 99.61c1.17 1.17 1.6 2.9 1.13 4.49a4.51 4.51 0 0 1-3.42 3.11l-31.82 6.36c-.3.06-.6.09-.89.09zm9.13-27.19l-3.39 16.96 16.96-3.39-13.57-13.57z">
+        </path>
+        <path
+            d="M36.32 107.29c-1.15 0-2.3-.44-3.18-1.32a4.49 4.49 0 0 1 0-6.36l54.09-54.09-19.09-19.09-54.09 54.09a4.49 4.49 0 0 1-6.36 0 4.49 4.49 0 0 1 0-6.36l57.28-57.28c.84-.84 1.99-1.32 3.18-1.32 1.19 0 2.34.47 3.18 1.32l25.46 25.46a4.49 4.49 0 0 1 0 6.36L39.5 105.97c-.88.88-2.03 1.32-3.18 1.32z">
+        </path>
+        <path
+            d="M93.6 50.02c-1.15 0-2.3-.44-3.18-1.32a4.49 4.49 0 0 1 0-6.36l12.73-12.73c1.39-1.47 2.56-3.8 0-6.36L90.41 10.52c-1.47-1.39-3.8-2.56-6.36 0L71.32 23.24a4.49 4.49 0 0 1-6.36 0 4.49 4.49 0 0 1 0-6.36L77.69 4.15C81.52.32 86.27-.92 91.05.68c3.23 1.08 5.35 3.08 5.74 3.47l12.73 12.73c3.83 3.83 5.07 8.58 3.47 13.35-1.08 3.23-3.08 5.35-3.47 5.74L96.78 48.7c-.88.88-2.03 1.32-3.18 1.32z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 153 117" id="icon-performatted">
+        <path
+            d="M112.5 99c-1.15 0-2.3-.44-3.18-1.32a4.49 4.49 0 0 1 0-6.36l32.82-32.82-32.82-32.82a4.49 4.49 0 0 1 0-6.36 4.49 4.49 0 0 1 6.36 0l36 36a4.49 4.49 0 0 1 0 6.36l-36 36c-.88.88-2.03 1.32-3.18 1.32zm-72 0c-1.15 0-2.3-.44-3.18-1.32l-36-36a4.49 4.49 0 0 1 0-6.36l36-36a4.49 4.49 0 0 1 6.36 0 4.49 4.49 0 0 1 0 6.36L10.86 58.5l32.82 32.82a4.49 4.49 0 0 1 0 6.36c-.88.88-2.03 1.32-3.18 1.32zm18 18a4.504 4.504 0 0 1-4.27-5.92l36-108A4.508 4.508 0 0 1 95.92.23c2.36.79 3.63 3.33 2.85 5.69l-36 108A4.505 4.505 0 0 1 58.5 117z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81 123" id="icon-pinned">
+        <path
+            d="M76.5 61h-5.24l-7.38-41h3.62c2.48 0 4.5-2.02 4.5-4.5v-11C72 2.02 69.98 0 67.5 0h-54C11.02 0 9 2.02 9 4.5v11c0 2.48 2.02 4.5 4.5 4.5h3.62L9.74 61H4.5A4.5 4.5 0 0 0 0 65.5v11C0 78.98 2.02 81 4.5 81h72c2.48 0 4.5-2.02 4.5-4.5v-11c0-2.48-2.02-4.5-4.5-4.5zM36 54c0 2.48-2.02 4.5-4.5 4.5S27 56.48 27 54V27c0-2.48 2.02-4.5 4.5-4.5S36 24.51 36 27v27zm4.5 69c-3.04 0-5.5-2.46-5.5-5.5v-25c0-3.04 2.46-5.5 5.5-5.5s5.5 2.46 5.5 5.5v25c0 3.04-2.46 5.5-5.5 5.5z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98 98" id="icon-quote">
+        <path
+            d="M94 98c-1.04 0-2.06-.41-2.83-1.17L74.34 80H4c-2.21 0-4-1.79-4-4V4c0-2.21 1.79-4 4-4h90c2.21 0 4 1.79 4 4v90c0 1.62-.97 3.08-2.47 3.69-.49.21-1.01.31-1.53.31zM8 72h68c1.06 0 2.08.42 2.83 1.17L90 84.34V8H8v64z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117 101.57" id="icon-reply">
+        <path
+            d="M112.5 101.57c-1.91 0-3.65-1.22-4.27-3.08-5.81-17.44-16.92-27.46-33.01-29.75-8.34-1.19-15.9.02-19.94.93v27.4c0 1.82-1.1 3.46-2.78 4.16-1.68.7-3.62.31-4.9-.98L1.32 53.97C.47 53.13 0 51.98 0 50.79s.47-2.34 1.32-3.18L47.6 1.32a4.503 4.503 0 0 1 4.9-.98c1.68.7 2.78 2.34 2.78 4.16v26.61c6 .55 17.14 2.32 28.37 7.94C98.87 46.65 117 62.89 117 97.07c0 2.21-1.6 4.09-3.78 4.44-.24.04-.48.06-.72.06z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117 117" id="icon-search">
+        <path
+            d="M54 108C24.22 108 0 83.78 0 54S24.22 0 54 0s54 24.22 54 54-24.22 54-54 54zm0-99C29.19 9 9 29.19 9 54s20.19 45 45 45 45-20.19 45-45S78.81 9 54 9z">
+        </path>
+        <path
+            d="M112.5 117c-1.15 0-2.3-.44-3.18-1.32l-23.5-23.5a4.49 4.49 0 0 1 0-6.36 4.49 4.49 0 0 1 6.36 0l23.5 23.5a4.49 4.49 0 0 1 0 6.36c-.88.88-2.03 1.32-3.18 1.32z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.53 117" id="icon-settings">
+        <path
+            d="M55.77 81c-12.41 0-22.5-10.09-22.5-22.5S43.36 36 55.77 36s22.5 10.09 22.5 22.5S68.17 81 55.77 81zm0-36c-7.44 0-13.5 6.06-13.5 13.5S48.32 72 55.77 72s13.5-6.06 13.5-13.5S63.21 45 55.77 45zm18-16.79c-1.69 0-3.31-.96-4.08-2.59L61.9 9H49.37l-9.7 16.94a4.5 4.5 0 0 1-6.14 1.67 4.503 4.503 0 0 1-1.67-6.14l11-19.21A4.49 4.49 0 0 1 46.76 0h18c1.75 0 3.33 1.01 4.07 2.59l9 19.21a4.5 4.5 0 0 1-2.17 5.98c-.6.29-1.25.43-1.89.43z">
+        </path>
+        <path
+            d="M17.02 63c-1.47 0-2.91-.72-3.77-2.04L.73 41.75a4.49 4.49 0 0 1-.13-4.71l9-15.59c.8-1.39 2.29-2.25 3.9-2.25h22.27c2.49 0 4.5 2.01 4.5 4.5s-2.01 4.5-4.5 4.5H16.1L9.78 39.15l11.01 16.89c1.36 2.08.77 4.87-1.31 6.23-.77.49-1.62.73-2.46.73z">
+        </path>
+        <path
+            d="M37.77 97.79H13.5c-1.61 0-3.09-.86-3.9-2.25l-9-15.59a4.49 4.49 0 0 1 .13-4.71l12.52-19.21a4.501 4.501 0 0 1 6.23-1.31 4.503 4.503 0 0 1 1.31 6.23L9.78 77.85 16.1 88.8h21.67c2.49 0 4.5 2.01 4.5 4.5s-2.02 4.49-4.5 4.49z">
+        </path>
+        <path
+            d="M64.77 117h-18c-1.75 0-3.33-1.01-4.08-2.59l-9-19.21a4.492 4.492 0 0 1 2.17-5.98 4.492 4.492 0 0 1 5.98 2.17L49.63 108H61.9l7.78-16.61c1.06-2.25 3.74-3.22 5.98-2.17a4.503 4.503 0 0 1 2.17 5.98l-9 19.21a4.474 4.474 0 0 1-4.06 2.59z">
+        </path>
+        <path
+            d="M98.03 97.79H73.76c-2.49 0-4.5-2.01-4.5-4.5s2.01-4.5 4.5-4.5h21.67l6.31-10.92-11.22-16.88c-1.38-2.07-.81-4.86 1.26-6.24 2.07-1.38 4.86-.81 6.24 1.26l12.77 19.21a4.5 4.5 0 0 1 .15 4.74l-9 15.59a4.521 4.521 0 0 1-3.91 2.24z">
+        </path>
+        <path
+            d="M94.26 63c-.86 0-1.72-.24-2.49-.75a4.508 4.508 0 0 1-1.26-6.24l11.22-16.88-6.31-10.92H73.77c-2.49 0-4.5-2.01-4.5-4.5s2.01-4.5 4.5-4.5h24.27c1.61 0 3.09.86 3.9 2.25l9 15.59a4.5 4.5 0 0 1-.15 4.74l-12.77 19.2A4.52 4.52 0 0 1 94.26 63z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.53 117" id="icon-settings_fill">
+        <path
+            d="M64.77 117h-18c-1.75 0-3.33-1.01-4.07-2.59l-7.8-16.62H13.5c-1.61 0-3.09-.86-3.9-2.25l-9-15.59a4.49 4.49 0 0 1 .13-4.71L11.64 58.5.73 41.75a4.511 4.511 0 0 1-.13-4.71l9-15.59c.8-1.39 2.29-2.25 3.9-2.25h19.66l9.7-16.94A4.49 4.49 0 0 1 46.76 0h18c1.75 0 3.33 1.01 4.08 2.59l7.79 16.62h21.41c1.61 0 3.09.86 3.9 2.25l9 15.59a4.5 4.5 0 0 1-.15 4.74L99.67 58.5l11.11 16.71a4.5 4.5 0 0 1 .15 4.74l-9 15.59a4.502 4.502 0 0 1-3.9 2.25h-21.4l-7.79 16.61a4.492 4.492 0 0 1-4.07 2.6zm-9-75.75c-9.51 0-17.25 7.74-17.25 17.25s7.74 17.25 17.25 17.25 17.25-7.74 17.25-17.25c-.01-9.51-7.74-17.25-17.25-17.25z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117 117" id="icon-share">
+        <path
+            d="M22.5 81C10.09 81 0 70.91 0 58.5S10.09 36 22.5 36 45 46.09 45 58.5 34.91 81 22.5 81zm72-36C82.09 45 72 34.91 72 22.5S82.09 0 94.5 0 117 10.09 117 22.5 106.91 45 94.5 45zm0 72C82.09 117 72 106.91 72 94.5S82.09 72 94.5 72 117 82.09 117 94.5 106.91 117 94.5 117z">
+        </path>
+        <path
+            d="M76.61 96.98c-.8 0-1.61-.21-2.35-.67l-39.14-24c-2.12-1.3-2.78-4.07-1.48-6.19s4.07-2.78 6.19-1.48l39.14 24a4.499 4.499 0 0 1 1.48 6.19 4.492 4.492 0 0 1-3.84 2.15zM38.7 55.15a4.5 4.5 0 0 1-3.88-2.21 4.502 4.502 0 0 1 1.58-6.17L75 23.92c2.13-1.27 4.9-.56 6.17 1.58 1.27 2.14.56 4.9-1.58 6.17l-38.6 22.85c-.72.43-1.51.63-2.29.63z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102.04 102.03" id="icon-share_topic">
+        <path
+            d="M75.6 102.03c-6.78 0-13.55-2.58-18.7-7.74L46.54 83.95a4.49 4.49 0 0 1 0-6.36 4.49 4.49 0 0 1 6.36 0l10.35 10.35c6.81 6.8 17.88 6.8 24.68 0 6.8-6.8 6.8-17.88 0-24.68L72.41 47.73c-3.3-3.3-7.68-5.11-12.34-5.11s-9.04 1.81-12.34 5.11a4.49 4.49 0 0 1-6.36 0 4.49 4.49 0 0 1 0-6.36c5-5 11.64-7.75 18.71-7.75s13.71 2.75 18.71 7.75L94.3 56.89c10.31 10.31 10.31 27.1 0 37.41-5.16 5.15-11.93 7.73-18.7 7.73z">
+        </path>
+        <path
+            d="M41.96 68.41c-7.07 0-13.71-2.75-18.7-7.75L7.73 45.14c-10.31-10.31-10.31-27.09 0-37.41 10.31-10.31 27.1-10.31 37.41 0l11.21 11.21a4.49 4.49 0 0 1 0 6.36 4.49 4.49 0 0 1-6.36 0L38.78 14.1c-6.81-6.8-17.88-6.8-24.68 0-6.8 6.81-6.8 17.88 0 24.68L29.62 54.3c3.3 3.3 7.68 5.11 12.34 5.11s9.05-1.81 12.34-5.11a4.49 4.49 0 0 1 6.36 0 4.49 4.49 0 0 1 0 6.36c-4.99 5-11.63 7.75-18.7 7.75z">
+        </path>
+        <path
+            d="M75.6 49.05c-1.15 0-2.3-.44-3.18-1.32-3.3-3.3-7.68-5.11-12.34-5.11s-9.04 1.81-12.34 5.11a4.49 4.49 0 0 1-6.36 0 4.49 4.49 0 0 1 0-6.36c5-5 11.64-7.75 18.71-7.75s13.71 2.75 18.71 7.75a4.49 4.49 0 0 1 0 6.36c-.9.88-2.05 1.32-3.2 1.32z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126 126" id="icon-time">
+        <path
+            d="M63 0C28.21 0 0 28.21 0 63s28.21 63 63 63 63-28.21 63-63S97.79 0 63 0zm31.6 94.6a6.471 6.471 0 0 1-4.6 1.9c-1.66 0-3.33-.63-4.6-1.9l-27-27a6.507 6.507 0 0 1-1.55-6.72l10-29a6.499 6.499 0 1 1 12.29 4.23l-8.67 25.16L94.6 85.4a6.525 6.525 0 0 1 0 9.2z"
+            fill="#666f75"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 99 108" id="icon-upload_files">
+        <path
+            d="M85.5 45c-1.15 0-2.3-.44-3.18-1.32L49.5 10.86 16.68 43.68a4.49 4.49 0 0 1-6.36 0 4.49 4.49 0 0 1 0-6.36l36-36a4.49 4.49 0 0 1 6.36 0l36 36a4.49 4.49 0 0 1 0 6.36c-.88.88-2.03 1.32-3.18 1.32z">
+        </path>
+        <path
+            d="M49.5 81c-2.49 0-4.5-2.01-4.5-4.5v-72a4.5 4.5 0 0 1 9 0v72c0 2.49-2.01 4.5-4.5 4.5zm45 27h-90a4.5 4.5 0 0 1-4.5-4.5v-9a4.5 4.5 0 0 1 9 0V99h81v-4.5c0-2.49 2.01-4.5 4.5-4.5s4.5 2.01 4.5 4.5v9c0 2.49-2.01 4.5-4.5 4.5z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102.04 117.01" id="icon-user">
+        <path
+            d="M50.69 58.22c-14.61 0-26.38-17.42-26.38-31.85C24.31 11.83 36.14 0 50.69 0c14.54 0 26.37 11.83 26.37 26.38 0 14.42-11.76 31.84-26.37 31.84zm.33 58.79c-.22 0-.44-.02-.66-.05-22.3-3.27-46.36-11.8-47.37-12.16a4.502 4.502 0 0 1-2.94-4.89c1.19-8.14 3.67-22.39 6.85-26.28.95-1.16 2.18-2.28 3.66-3.34 8.98-6.41 21.6-10.32 22.14-10.48 1.86-.57 3.88.12 5 1.72 1.75 2.46 7.67 8.85 13.95 8.85h.03c4.29-.01 8.55-2.99 12.67-8.85a4.51 4.51 0 0 1 5-1.72c.53.16 13.16 4.08 22.13 10.48 1.5 1.07 2.72 2.19 3.66 3.34 3.18 3.91 5.66 18.15 6.86 26.29.31 2.12-.92 4.17-2.94 4.89-1.01.36-25.08 8.89-47.38 12.17-.22.02-.44.03-.66.03z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" id="icon-verified">
+        <path
+            d="M54 0C24.18 0 0 24.18 0 54s24.18 54 54 54 54-24.18 54-54S83.82 0 54 0zm31.6 40.6l-36 36a6.471 6.471 0 0 1-4.6 1.9c-1.66 0-3.33-.63-4.6-1.9l-18-18a6.494 6.494 0 0 1 0-9.19 6.494 6.494 0 0 1 9.19 0L45 62.81l31.4-31.4a6.494 6.494 0 0 1 9.19 0c2.54 2.53 2.54 6.65.01 9.19z"
+            fill="#666f75"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 90" id="icon-view">
+        <path
+            d="M72 0C32.24 0 0 36 0 45s32.24 45 72 45 72-36 72-45S111.76 0 72 0zm0 72c-14.91 0-27-12.09-27-27s12.09-27 27-27 27 12.09 27 27-12.09 27-27 27z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 132" id="Level_Up">
+        <path
+            d="M66 123H30c-1.66 0-3-1.34-3-3V60H3c-1.16 0-2.22-.67-2.72-1.73s-.33-2.3.41-3.19l45-54C46.27.4 47.11 0 48 0s1.73.4 2.3 1.08l45 54c.75.89.91 2.14.41 3.19S94.16 60 93 60H69v60c0 1.66-1.34 3-3 3zm-33-6h30V57c0-1.66 1.34-3 3-3h20.59L48 7.69 9.41 54H30c1.66 0 3 1.34 3 3v60z">
+        </path>
+        <path
+            d="M57 132H39c-.8 0-1.56-.32-2.12-.88l-9-9a3 3 0 0 1 0-4.24 3 3 0 0 1 4.24 0l8.12 8.12h15.52l8.12-8.12a3 3 0 0 1 4.24 0 3 3 0 0 1 0 4.24l-9 9c-.56.56-1.32.88-2.12.88zM30 69H12c-.8 0-1.56-.32-2.12-.88l-9-9a3 3 0 0 1 0-4.24 3 3 0 0 1 4.24 0L13.24 63H30c1.66 0 3 1.34 3 3s-1.34 3-3 3zm54 0H66c-1.66 0-3-1.34-3-3s1.34-3 3-3h16.76l8.12-8.12a3 3 0 0 1 4.24 0 3 3 0 0 1 0 4.24l-9 9c-.56.56-1.32.88-2.12.88z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111 111" id="Others">
+        <path
+            d="M5.5 2C3.3 2 1 3.3 1 5.5v82C1 89.7 3.3 92 5.5 92H70c2.2 0 4.81 1.36 5.81 3.32l5.38 10.49c.99 1.96 2.62 1.9 3.62-.06l5.38-10.4C91.19 93.39 93.8 92 96 92h9.5c2.2 0 3.5-2.3 3.5-4.5v-82c0-2.2-1.3-3.5-3.5-3.5H5.5z"
+            fill="#fff"></path>
+        <path
+            d="M83 108.65c-1.26 0-2.41-.84-3.15-2.29l-5.38-10.61C73.73 94.28 71.64 93 70 93H5.5A5.51 5.51 0 0 1 0 87.5v-82C0 2.47 2.47 0 5.5 0h100c3.03 0 5.5 2.47 5.5 5.5v82c0 3.03-2.47 5.5-5.5 5.5H96c-1.64 0-3.73 1.28-4.47 2.75l-5.38 10.62c-.74 1.45-1.89 2.28-3.15 2.28zM5.5 3A2.5 2.5 0 0 0 3 5.5v82A2.5 2.5 0 0 0 5.5 90H70c2.76 0 5.9 1.93 7.15 4.39L82.53 105c.24.47.46.63.51.66-.03-.02.19-.19.43-.66l5.38-10.62C90.1 91.93 93.24 90 96 90h9.5a2.5 2.5 0 0 0 2.5-2.5v-82a2.5 2.5 0 0 0-2.5-2.5H5.5z">
+        </path>
+        <path
+            d="M101 111H56c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5h45c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5zm-54 0H29c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5h18c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5zM20 28h63m0 1.5H20c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5h63c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5zM20 46h45m0 1.5H20c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5h45c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5zM20 64h54m0 1.5H20c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5h54c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5z">
+        </path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111 111" id="Poll">
+        <path
+            d="M5.5 2C3.3 2 1 3.3 1 5.5v82C1 89.7 3.3 92 5.5 92H70c2.2 0 4.81 1.36 5.81 3.32l5.38 10.49c.99 1.96 2.62 1.9 3.62-.06l5.38-10.4C91.19 93.39 93.8 92 96 92h9.5c2.2 0 3.5-2.3 3.5-4.5v-82c0-2.2-1.3-3.5-3.5-3.5H5.5z"
+            fill="#fff"></path>
+        <path
+            d="M83 108.65c-1.26 0-2.41-.84-3.15-2.29l-5.38-10.61C73.73 94.28 71.64 93 70 93H5.5A5.51 5.51 0 0 1 0 87.5v-82C0 2.47 2.47 0 5.5 0h100c3.03 0 5.5 2.47 5.5 5.5v82c0 3.03-2.47 5.5-5.5 5.5H96c-1.64 0-3.73 1.28-4.47 2.75l-5.38 10.62c-.74 1.45-1.89 2.28-3.15 2.28zM5.5 3A2.5 2.5 0 0 0 3 5.5v82A2.5 2.5 0 0 0 5.5 90H70c2.76 0 5.9 1.93 7.15 4.39L82.53 105c.24.47.46.63.51.66-.03-.02.19-.19.43-.66l5.38-10.62C90.1 91.93 93.24 90 96 90h9.5a2.5 2.5 0 0 0 2.5-2.5v-82a2.5 2.5 0 0 0-2.5-2.5H5.5z">
+        </path>
+        <path
+            d="M101 111H56c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5h45c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5zm-54 0H29c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5h18c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5zm21-59H20c-2.76 0-5-2.24-5-5s2.24-5 5-5h48">
+        </path>
+        <path d="M68 42h27c2.76 0 5 2.24 5 5s-2.24 5-5 5H68" fill="#b9c2c6"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111 111" id="Question">
+        <path
+            d="M5.5 1.5c-2.2 0-4 1.8-4 4v82c0 2.2 1.8 4 4 4H70c2.2 0 4.81 1.61 5.81 3.57l5.38 10.61c.99 1.96 2.62 1.96 3.62 0l5.38-10.61c.99-1.96 3.61-3.57 5.81-3.57h9.5c2.2 0 4-1.8 4-4v-82c0-2.2-1.8-4-4-4H5.5z"
+            fill="#fff"></path>
+        <path
+            d="M83 108.65c-1.26 0-2.41-.84-3.15-2.29l-5.38-10.61C73.73 94.28 71.64 93 70 93H5.5A5.51 5.51 0 0 1 0 87.5v-82C0 2.47 2.47 0 5.5 0h100c3.03 0 5.5 2.47 5.5 5.5v82c0 3.03-2.47 5.5-5.5 5.5H96c-1.64 0-3.73 1.28-4.47 2.75l-5.38 10.62c-.74 1.45-1.89 2.28-3.15 2.28zM5.5 3A2.5 2.5 0 0 0 3 5.5v82A2.5 2.5 0 0 0 5.5 90H70c2.76 0 5.9 1.93 7.15 4.39L82.53 105c.24.47.46.63.51.66-.03-.02.19-.19.43-.66l5.38-10.62C90.1 91.93 93.24 90 96 90h9.5a2.5 2.5 0 0 0 2.5-2.5v-82a2.5 2.5 0 0 0-2.5-2.5H5.5z">
+        </path>
+        <path
+            d="M101 111H66c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5h35c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5zm-44 0H29c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5h28c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5z">
+        </path>
+        <path
+            d="M52.36 54.22c0-1.36.25-2.59.74-3.69s1.09-2.04 1.79-2.84c.7-.79 1.64-1.74 2.81-2.84 1.44-1.32 2.5-2.47 3.21-3.43.7-.96 1.05-2.09 1.05-3.38 0-3.52-1.83-5.28-5.5-5.28-1.82 0-3.18.53-4.09 1.59-.91 1.06-1.53 2.5-1.87 4.31l-6.01-1.65c.3-2.72 1.56-4.95 3.77-6.69 2.21-1.74 5.04-2.61 8.48-2.61 3.52 0 6.4.91 8.65 2.72s3.38 4.31 3.38 7.49c0 1.66-.27 3.08-.79 4.25-.53 1.17-1.16 2.14-1.9 2.89-.74.76-1.73 1.63-2.98 2.61-1.59 1.21-2.77 2.33-3.55 3.35-.78 1.02-1.16 2.35-1.16 3.97v1.08h-6.01v-1.85zm-1.02 10.16v-.74c0-2.53 1.27-3.8 3.8-3.8h.68c2.53 0 3.8 1.27 3.8 3.8v.74c0 2.53-1.27 3.8-3.8 3.8h-.68c-2.54 0-3.8-1.27-3.8-3.8z"
+            fill="#b9c2c6"></path>
+    </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111 111" id="Video">
+        <path
+            d="M5.5 1.5c-2.2 0-4 1.8-4 4v82c0 2.2 1.8 4 4 4H70c2.2 0 4.81 1.61 5.81 3.57l5.38 10.61c.99 1.96 2.62 1.96 3.62 0l5.38-10.61c.99-1.96 3.61-3.57 5.81-3.57h9.5c2.2 0 4-1.8 4-4v-82c0-2.2-1.8-4-4-4H5.5z"
+            fill="#fff"></path>
+        <path
+            d="M83 108.65c-1.26 0-2.41-.84-3.15-2.29l-5.38-10.61C73.73 94.28 71.64 93 70 93H5.5A5.51 5.51 0 0 1 0 87.5v-82C0 2.47 2.47 0 5.5 0h100c3.03 0 5.5 2.47 5.5 5.5v82c0 3.03-2.47 5.5-5.5 5.5H96c-1.64 0-3.73 1.28-4.47 2.75l-5.38 10.62c-.74 1.45-1.89 2.28-3.15 2.28zM5.5 3A2.5 2.5 0 0 0 3 5.5v82A2.5 2.5 0 0 0 5.5 90H70c2.76 0 5.9 1.93 7.15 4.39L82.53 105c.24.47.46.63.51.66-.03-.02.19-.19.43-.66l5.38-10.62C90.1 91.93 93.24 90 96 90h9.5a2.5 2.5 0 0 0 2.5-2.5v-82a2.5 2.5 0 0 0-2.5-2.5H5.5z">
+        </path>
+        <path
+            d="M101 111H56c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5h45c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5zm-54 0H29c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5h18c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5z">
+        </path>
+        <path
+            d="M56 24.33c-11.97 0-21.67 9.7-21.67 21.67S44.03 67.67 56 67.67c11.97 0 21.67-9.7 21.67-21.67S67.97 24.33 56 24.33zm-2.13 28.8c-1.94 1.03-3.54.07-3.54-2.13V41c0-2.2 1.59-3.16 3.54-2.13l9.93 5.26c1.94 1.03 1.94 2.71 0 3.74l-9.93 5.26z"
+            fill="#b9c2c6"></path>
+    </symbol>
+</svg>
+
 </html>
