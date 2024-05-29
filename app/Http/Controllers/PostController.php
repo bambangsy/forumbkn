@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Thread;
+use App\Models\Category;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -14,7 +16,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $threads = Thread::all();
+        return view('welcome',compact('threads'));
     }
 
     /**
@@ -22,7 +25,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('create-thread');
+        $category = Category::all();
+        return view('create-thread', compact('category'));
     }
 
     /**
@@ -30,30 +34,37 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => ['required'],
-            'type' => ['required'],
-            'content'=> ['required'],
-            'tags' => ['required'],
+
+       
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'type' => 'required',
+            'content'=> 'required',
+            'tags' => 'required',
         ]);
 
-        Thread::create([
-            'title' => $request->title,
-            'type' => $request->type,
-            'content' => $request->content,
-            'tags' => $request->tags,
+        $threadData = [
+            'title' => $validatedData['title'],
+            'type' => $validatedData['type'],
+            'content' => $validatedData['content'],
+            'category_id' => $request->category,
+            'tags' => $validatedData['tags'],
             'user_id' => auth()->id(),
-            'category_id' => $request->category_id
-        ]);
+        ];
 
-        Post::create([
-            'title' => $request->title,
-            'content' => $request->content,
+        $thread = Thread::create($threadData);
+
+        $postData = [
+            'title' => $validatedData['title'],
+            'content' => $validatedData['content'],
             'user_id' => auth()->id(),
-            'thread_id' => $request->thread_id,
-        ]);
+            'is_first_post' => true,
+            'thread_id' => $thread->id,
+        ];
 
-        return Redirect::route('welcome');
+        Post::create($postData);
+
+        return Redirect::route('home');
     }
 
     /**

@@ -14,5 +14,7 @@ class Post extends Model
         'content',
         'user_id',
         'thread_id',
+        'is_reply_to',
+        'is_first_post'
     ];
 }

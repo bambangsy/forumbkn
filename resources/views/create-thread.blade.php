@@ -20,6 +20,7 @@
                 <div class="tt-js-active-btn tt-wrapper-btnicon">
                     <div class="row tt-w410-col-02">
                         <div class="col-4 col-lg-3 col-xl-2">
+                            <input type="hidden" name="type" class="form-control" id="inputTopicType">
                             <a href="#" class="tt-button-icon" onclick="saveValue('Discussion'); return false;">
                                 <span class="tt-icon">
                                     <svg>
@@ -85,7 +86,13 @@
                     <script>
                         function saveValue(value) {
                             // Code to save the value has been fixed
-                            console.log('Value saved:', value);
+                            
+                            // Make the clicked element active
+                            document.querySelectorAll('.tt-button-icon').forEach(function(button) {
+                                button.classList.remove('active');
+                            });
+                            event.currentTarget.classList.add('active');
+                            document.querySelector('input[name="type"]').value = value;
                         }
                     </script>
               
@@ -166,23 +173,25 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <textarea name="message" class="form-control" rows="5" placeholder="Lets get started"></textarea>
+                    <textarea name="content" class="form-control" rows="5" placeholder="Lets get started"></textarea>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="inputTopicTitle">Category</label>
-                            <select class="form-control">
-                                <option value="Select">Select</option>
-                                <option value="Value 01">Value 01</option>
-                                <option value="Value 02">Value 02</option>
+                            <select class="form-control" name="category">
+                                <option value="" disabled selected>Pick a category</option>
+                                @foreach($category as $cat)
+                                    <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+                                @endforeach
+                              
                             </select>
                         </div>
                     </div>
                     <div class="col-md-8">
                         <div class="form-group">
                             <label for="inputTopicTags">Tags</label>
-                            <input type="text" name="name" class="form-control" id="inputTopicTags" placeholder="Use comma to separate tags">
+                            <input type="text" name="tags" class="form-control" id="inputTopicTags" placeholder="Use comma to separate tags">
                         </div>
                     </div>
                 </div>

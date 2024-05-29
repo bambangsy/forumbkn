@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
-            $table->integer('is_reply_to');
-            $table->integer('is_first_post');
+            $table->integer('is_reply_to')->nullable();
+            $table->boolean('is_first_post')->default(false);
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('thread_id')->constrained('threads')->onDelete('cascade');
             $table->timestamps();

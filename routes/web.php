@@ -13,8 +13,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/create', [PostController::class,'create'])->name('thread.create');
-    Route::post('/create/store', [PostController::class,'store'])->name('thread.store');
+    Route::get('/thread/create', [PostController::class,'create'])->name('thread.create');
+    Route::post('/thread/create', [PostController::class,'store'])->name('thread.store');
 
 
 
