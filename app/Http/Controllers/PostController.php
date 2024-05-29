@@ -22,7 +22,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('thread.create');
+        return view('create-thread');
     }
 
     /**
