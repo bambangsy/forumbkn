@@ -19,12 +19,12 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'bambang',
             'email' => 'bambang@example.com',
-            'password' => 'bambang'
+            'password' => bcrypt('bambang') 
         ]);
         User::factory()->create([
             'name' => 'raka',
             'email' => 'raka@example.com',
-            'password' => 'raka'
+            'password' => bcrypt('raka') 
         ]);
 
         Category::create(['name' => 'politik']);
