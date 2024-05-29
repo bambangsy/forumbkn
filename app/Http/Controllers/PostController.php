@@ -11,7 +11,7 @@ class PostController extends Controller
      */
     public function index()
     {
-       
+        return view('welcome');
     }
 
     /**
@@ -19,7 +19,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('create-thread');
     }
 
     /**

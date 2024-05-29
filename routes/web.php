@@ -3,8 +3,9 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', PostController::class,'index')->name('home');
-Route::get('/create', PostController::class,'create')->name('create-topic');
+
+Route::get('/', [PostController::class,'index'])->name('home');
+Route::get('/create', [PostController::class,'create'])->name('create-topic');
 
 
 Route::get('/dashboard', function () {
