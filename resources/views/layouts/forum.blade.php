@@ -123,7 +123,7 @@
         </form>
     </div>
 
-    <a href="{{route('create-thread')}}" class="tt-btn-create-topic">
+    <a href="{{route('thread.create')}}" class="tt-btn-create-topic">
         <span class="tt-icon">
             <svg>
                 <use xlink:href="#icon-create_new"></use>
