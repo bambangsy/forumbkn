@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Forum - Responsive HTML5 Template</title>
+    
     <meta name="keywords" content="HTML5 Template">
     <meta name="description" content="Forum - Responsive HTML5 Template">
     <meta name="author" content="Forum">
@@ -11,9 +12,10 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{{ asset('forum/css/style.css') }}">
+    @vite(['forum/css/style.css', 'js/bundle.js'])
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 
 <body class="font-sans antialiased dark:bg-black dark:text-white/50">
@@ -260,8 +262,8 @@
         </div>
     </div>
 </body>
-<script src="{{ asset('js/bundle.js') }}"></script>
-<x-forum.svgs/>
+
+@include('components.forum.svgs')
 
 
 </html>
