@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
+use App\Models\Thread;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class PostController extends Controller
 {
@@ -19,7 +22,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('create-thread');
+        return view('thread.create');
     }
 
     /**
@@ -27,7 +30,30 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => ['required'],
+            'type' => ['required'],
+            'content'=> ['required'],
+            'tags' => ['required'],
+        ]);
+
+        Thread::create([
+            'title' => $request->title,
+            'type' => $request->type,
+            'content' => $request->content,
+            'tags' => $request->tags,
+            'user_id' => auth()->id(),
+            'category_id' => $request->category_id
+        ]);
+
+        Post::create([
+            'title' => $request->title,
+            'content' => $request->content,
+            'user_id' => auth()->id(),
+            'thread_id' => $request->thread_id,
+        ]);
+
+        return Redirect::route('welcome');
     }
 
     /**
@@ -35,7 +61,7 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // 
     }
 
     /**
@@ -43,7 +69,9 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $thread = Thread::find($id);
+
+        return view('thread.create', compact('thread'));
     }
 
     /**
@@ -51,7 +79,15 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $thread = Thread::find($id);
+        $thread->title = $request->title;
+        $thread->type = $request->type;
+        $thread->content = $request->content;
+        $thread->tags = $request->tags;
+        
+        $thread->save();
+
+        return redirect(route('welcome'));
     }
 
     /**
@@ -59,6 +95,9 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $thread = Thread::find($id);
+        $thread->delete();
+
+        return redirect(route('welcome'));
     }
 }
