@@ -5,11 +5,12 @@
         <h1 class="tt-title-border">
             Create New Topic
         </h1>
-        <form class="form-default form-create-topic">
+        <form action="{{route('thread.store')}}" method="POST" class="form-default form-create-topic">
+            @csrf
             <div class="form-group">
                 <label for="inputTopicTitle">Topic Title</label>
                 <div class="tt-value-wrapper">
-                    <input type="text" name="name" class="form-control" id="inputTopicTitle" placeholder="Subject of your topic">
+                    <input type="text" name="title" class="form-control" id="inputTopicTitle" placeholder="Subject of your topic">
                     <span class="tt-value-input">99</span>
                 </div>
                 <div class="tt-note">Describe your topic well, while keeping the subject as short as possible.</div>
@@ -19,7 +20,7 @@
                 <div class="tt-js-active-btn tt-wrapper-btnicon">
                     <div class="row tt-w410-col-02">
                         <div class="col-4 col-lg-3 col-xl-2">
-                            <a href="#" class="tt-button-icon">
+                            <a href="#" class="tt-button-icon" onclick="saveValue('Discussion'); return false;">
                                 <span class="tt-icon">
                                     <svg>
                                         <use xlink:href="#icon-discussion"></use>
@@ -29,7 +30,7 @@
                             </a>
                         </div>
                         <div class="col-4 col-lg-3 col-xl-2">
-                            <a href="#" class="tt-button-icon">
+                            <a href="#" class="tt-button-icon" onclick="saveValue('Question')">
                                 <span class="tt-icon">
                                      <svg>
                                         <use xlink:href="#Question"></use>
@@ -39,7 +40,7 @@
                             </a>
                         </div>
                         <div class="col-4 col-lg-3 col-xl-2">
-                            <a href="#" class="tt-button-icon">
+                            <a href="#" class="tt-button-icon" onclick="saveValue('Poll')">
                                 <span class="tt-icon">
                                      <svg>
                                         <use xlink:href="#Poll"></use>
@@ -49,7 +50,7 @@
                             </a>
                         </div>
                         <div class="col-4 col-lg-3 col-xl-2">
-                            <a href="#" class="tt-button-icon">
+                            <a href="#" class="tt-button-icon" onclick="saveValue('Gallery')">
                                 <span class="tt-icon">
                                      <svg>
                                         <use xlink:href="#icon-gallery"></use>
@@ -59,7 +60,7 @@
                             </a>
                         </div>
                         <div class="col-4 col-lg-3 col-xl-2">
-                            <a href="#" class="tt-button-icon">
+                            <a href="#" class="tt-button-icon" onclick="saveValue('Video')">
                                 <span class="tt-icon">
                                      <svg>
                                         <use xlink:href="#Video"></use>
@@ -69,7 +70,7 @@
                             </a>
                         </div>
                         <div class="col-4 col-lg-3 col-xl-2">
-                            <a href="#" class="tt-button-icon">
+                            <a href="#" class="tt-button-icon" onclick="saveValue('Other'); return false;">
                                 <span class="tt-icon">
                                      <svg>
                                         <use xlink:href="#Others"></use>
@@ -80,6 +81,15 @@
                         </div>
                     </div>
                 </div>
+                
+                    <script>
+                        function saveValue(value) {
+                            // Code to save the value has been fixed
+                            console.log('Value saved:', value);
+                        }
+                    </script>
+              
+
             </div>
             <div class="pt-editor">
                 <h6 class="pt-title">Topic Body</h6>
@@ -178,7 +188,7 @@
                 </div>
                  <div class="row">
                     <div class="col-auto ml-md-auto">
-                        <a href="#" class="btn btn-secondary btn-width-lg">Create Post</a>
+                        <button class="btn btn-secondary btn-width-lg">Create Post</button>
                     </div>
                 </div>
             </div>
