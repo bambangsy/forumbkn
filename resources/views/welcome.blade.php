@@ -23,7 +23,7 @@
                 </svg>
             </div>
             <div class="tt-col-description">
-                <h6 class="tt-title"><a href="#">
+                <h6 class="tt-title"><a href="{{route('thread.show', $thread->id)}}">
                         {{ $thread->title }}
                     </a></h6>
                 <div class="row align-items-center no-gutters">

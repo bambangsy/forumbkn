@@ -11,17 +11,18 @@
                        <!-- /toggle mobile menu -->
                        <!-- logo -->
                        <div class="tt-logo">
-                           <a href="index.html"><img src="images/logo.png" alt=""></a>
+                           <a href="."><img src="images/logo.png" alt=""></a>
                        </div>
                        <!-- /logo -->
                        <!-- desctop menu -->
                        <div class="tt-desktop-menu">
                            <nav>
                                <ul>
-                                   <li><a href="page-categories.html"><span>Categories</span></a></li>
-                                   <li><a href="page-tabs.html"><span>Trending</span></a></li>
-                                   <li><a href="page-create-topic.html"><span>New</span></a></li>
-                                   <li>
+                                   <li><a href="{{route('home')}}"><span>Home</span></a></li>
+                                   <li><a href="{{route('category')}}"><span>Categories</span></a></li>
+                                   {{-- <li><a href="page-tabs.html"><span>Trending</span></a></li>
+                                   <li><a href="page-create-topic.html"><span>New</span></a></li> --}}
+                                   {{-- <li>
                                        <a href="page-single-user.html"><span>Pages</span></a>
                                        <ul>
                                            <li><a href="index.html">Home</a></li>
@@ -46,7 +47,7 @@
                                            <li><a href="messages-page.html">Message</a></li>
                                            <li><a href="messages-compose.html">Message Compose</a></li>
                                        </ul>
-                                   </li>
+                                   </li> --}}
                                </ul>
                            </nav>
                        </div>
@@ -150,10 +151,10 @@
 
 
                                <div class="d-flex align-items-center ">
-                                   <span>{{ auth()->user()->name }}</span>
+                                   <span class='ml-1'>{{ auth()->user()->name }}</span>
                                    <form method="POST" action="{{ route('logout') }}" class="ml-4">
                                        @csrf
-                                       <button class="btn btn-primary" type="submit">Logout</button>
+                                       <button class="btn btn-primary tt-desktop-menu" type="submit">Logout</button>
                                    </form>
                                </div>
 
