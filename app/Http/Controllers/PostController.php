@@ -72,7 +72,9 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        return view('single-thread');
+        $post = Post::findOrFail($id);
+
+        return view('single-thread', compact('post'));
     }
 
     /**

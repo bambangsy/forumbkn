@@ -17,4 +17,14 @@ class Post extends Model
         'is_reply_to',
         'is_first_post'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function thread()
+    {
+        return $this->belongsTo(Thread::class);
+    }
 }
