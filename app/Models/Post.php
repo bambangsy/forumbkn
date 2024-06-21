@@ -12,9 +12,8 @@ class Post extends Model
     protected $fillable=[
         'content',
         'user_id',
-        'thread_id',
+        'is_thread',
         'is_reply_to',
-        'is_first_post'
     ];
 
     public function user()

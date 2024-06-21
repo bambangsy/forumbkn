@@ -15,21 +15,21 @@
         </div>
     
 
-        @foreach($threads as $thread)
+        @foreach($posts as $post)
         <div class="tt-item">
             <div class="tt-col-avatar">
                 <svg class="tt-icon">
-                    <use xlink:href="#icon-ava-{{ substr($thread->user->name, 0, 1) }}"></use>
+                    <use xlink:href="#icon-ava-{{ substr($post->user->name, 0, 1) }}"></use>
                 </svg>
             </div>
             <div class="tt-col-description">
-                <h6 class="tt-title"><a href="{{route('thread.show', $thread->id)}}">
-                        {{ $thread->title }}
+                <h6 class="tt-title"><a href="{{route('thread.show', $post->id)}}">
+                        {{ $post->title }}
                     </a></h6>
                 <div class="row align-items-center no-gutters">
                     <div class="col-11">
                         <ul class="tt-list-badge">
-                            @foreach(explode(',', $thread->tags) as $tag)
+                            @foreach(explode(',', $post->tags) as $tag)
                             <li class=""><a href="#"><span class="tt-badge">{{ $tag }}</span></a></li>
                             @endforeach
                         </ul>
@@ -37,9 +37,9 @@
                     
                 </div>
             </div>
-            <div class="tt-col-category"><span class="tt-badge">{{ $thread->category->name }}</span></div>
-            <div class="tt-col-uploadedby"><a href="#">{{ $thread->user->name }}</a></div>
-            <div class="tt-col-uploadedat">{{ $thread->created_at->diffForHumans() }}</div>
+            <div class="tt-col-category"><span class="tt-badge">{{ $post->category->name }}</span></div>
+            <div class="tt-col-uploadedby"><a href="#">{{ $post->user->name }}</a></div>
+            <div class="tt-col-uploadedat">{{ $post->created_at->diffForHumans() }}</div>
             
             <div class="tt-col-value hide-mobile">0</div>
             <div class="tt-col-value hide-mobile">0</div>

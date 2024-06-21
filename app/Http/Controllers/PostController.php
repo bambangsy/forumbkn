@@ -17,8 +17,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        $threads = Thread::orderBy('created_at', 'desc')->get();
-        return view('welcome',compact('threads'));
+
+        // Start of Selection
+        $posts = Post::where('is_thread', true)->get();
+        return view('welcome', compact('posts'));
     }
 
     /**
