@@ -1,6 +1,10 @@
 
 @extends('layouts.forum')
 
+@section('head')
+
+@vite(['resources/css/app.css', 'resources/js/app.js'])
+@endsection
 @section('content')
 
     <div class="py-12">

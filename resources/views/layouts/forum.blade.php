@@ -12,13 +12,12 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{{ asset('forum/css/style.css') }}">
-    @vite(['forum/css/style.css', 'js/bundle.js'])
 
-    <!-- Scripts -->
+    @yield('head')
 
 </head>
 
-<body class="font-sans antialiased dark:bg-black dark:text-white/50">
+<body class="font-sans antialiased ">
     <x-forum.navbar />
     <x-forum.header />
 
