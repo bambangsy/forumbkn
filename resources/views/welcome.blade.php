@@ -24,12 +24,12 @@
             </div>
             <div class="tt-col-description">
                 <h6 class="tt-title"><a href="{{route('thread.show', $post->id)}}">
-                        {{ $post->title }}
+                        {{ $post->details->title }}
                     </a></h6>
                 <div class="row align-items-center no-gutters">
                     <div class="col-11">
                         <ul class="tt-list-badge">
-                            @foreach(explode(',', $post->tags) as $tag)
+                            @foreach(explode(',', $post->details->tags) as $tag)
                             <li class=""><a href="#"><span class="tt-badge">{{ $tag }}</span></a></li>
                             @endforeach
                         </ul>
@@ -37,7 +37,7 @@
                     
                 </div>
             </div>
-            <div class="tt-col-category"><span class="tt-badge">{{ $post->category->name }}</span></div>
+            <div class="tt-col-category"><span class="tt-badge">{{ $post->details->category->name }}</span></div>
             <div class="tt-col-uploadedby"><a href="#">{{ $post->user->name }}</a></div>
             <div class="tt-col-uploadedat">{{ $post->created_at->diffForHumans() }}</div>
             

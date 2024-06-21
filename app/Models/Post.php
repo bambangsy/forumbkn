@@ -21,9 +21,9 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function thread()
+    public function details()
     {
-        return $this->belongsTo(Thread::class);
+        return $this->hasOne(PostDetail::class);
     }
 
 

@@ -12,7 +12,7 @@
                                 </svg></i>
                         </div>
                         <div class="tt-avatar-title">
-                            <a href="#">{{ $post->user->name }}
+                            <a href="#">{{ $post->user->name }}</a>
                         </div>
                         <a href="#" class="tt-info-time">
                             <i class="tt-icon"><svg>
@@ -21,13 +21,12 @@
                         </a>
                     </div>
                     <h3 class="tt-item-title">
-                        {{ $post->title }}
+                        {{ $post->details->title }}
                     </h3>
                     <div class="tt-item-tag">
                         <ul class="tt-list-badge">
-                            @foreach (explode(',', $post->thread->tags) as $tag)
-                                <li class=""><a href="#"><span class="tt-badge">{{ $tag }}</span></a>
-                                </li>
+                            @foreach (explode(',', $post->details->tags) as $tag)
+                                <li class=""><a href="#"><span class="tt-badge">{{ $tag }}</span></a></li>
                             @endforeach
                         </ul>
                     </div>
@@ -304,6 +303,7 @@
                 </div>
             </div>
         </form>
+
         @foreach ($reply as $r)
             <div class="tt-item">
                 <div class="tt-single-topic">
@@ -311,7 +311,7 @@
                         <div class="tt-item-info info-top">
                             <div class="tt-avatar-icon">
                                 <i class="tt-icon"><svg>
-                                        <use xlink:href="#icon-ava-{{ substr($post->user->name, 0, 1) }}"></use>
+                                        <use xlink:href="#icon-ava-{{ substr($r->user->name, 0, 1) }}"></use>
                                     </svg></i>
                             </div>
                             <div class="tt-avatar-title">
@@ -320,7 +320,7 @@
                             <a href="#" class="tt-info-time">
                                 <i class="tt-icon"><svg>
                                         <use xlink:href="#icon-time"></use>
-                                    </svg></i>6 Jan,2019
+                                    </svg></i>{{ date('d M, Y', strtotime($r->created_at)) }}
                             </a>
                         </div>
                     </div>
@@ -332,19 +332,19 @@
                             <i class="tt-icon"><svg>
                                     <use xlink:href="#icon-like"></use>
                                 </svg></i>
-                            <span class="tt-text">671</span>
+                            <span class="tt-text">0</span>
                         </a>
                         <a href="#" class="tt-icon-btn">
                             <i class="tt-icon"><svg>
                                     <use xlink:href="#icon-dislike"></use>
                                 </svg></i>
-                            <span class="tt-text">39</span>
+                            <span class="tt-text">0</span>
                         </a>
                         <a href="#" class="tt-icon-btn">
                             <i class="tt-icon"><svg>
                                     <use xlink:href="#icon-favorite"></use>
                                 </svg></i>
-                            <span class="tt-text">12</span>
+                            <span class="tt-text">0</span>
                         </a>
                         <div class="col-separator"></div>
                         <a href="#" class="tt-icon-btn tt-hover-02 tt-small-indent">
@@ -366,6 +366,5 @@
                 </div>
             </div>
         @endforeach
-
     </div>
 @endsection
