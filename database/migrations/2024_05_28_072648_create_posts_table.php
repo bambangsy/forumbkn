@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
             $table->text('content');
             $table->integer('is_reply_to')->nullable();
             $table->boolean('is_first_post')->default(false);

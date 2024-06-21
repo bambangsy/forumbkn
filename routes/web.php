@@ -17,6 +17,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/thread/create', [PostController::class,'create'])->name('thread.create');
     Route::post('/thread/create', [PostController::class,'store'])->name('thread.store');
     Route::get('/thread/{id}', [PostController::class,'show'])->name('thread.show');
+    Route::post('/reply/{id}', [PostController::class,'reply'])->name('reply.post');
+
     
 
 

@@ -10,7 +10,6 @@ class Post extends Model
     use HasFactory;
 
     protected $fillable=[
-        'title',
         'content',
         'user_id',
         'thread_id',
@@ -27,4 +26,12 @@ class Post extends Model
     {
         return $this->belongsTo(Thread::class);
     }
+
+
+    public static function get_reply($id)
+    {
+        return Post::where('is_reply_to', $id)->orderBy('id', 'desc')->get();
+    }
+    
+
 }

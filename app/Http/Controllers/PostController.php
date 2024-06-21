@@ -7,6 +7,7 @@ use App\Models\Thread;
 use App\Models\Category;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
 class PostController extends Controller
@@ -16,7 +17,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $threads = Thread::all();
+        $threads = Thread::orderBy('created_at', 'desc')->get();
         return view('welcome',compact('threads'));
     }
 
@@ -35,7 +36,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-       
+     
         $validatedData = $request->validate([
             'title' => 'required',
             'type' => 'required',
@@ -49,20 +50,21 @@ class PostController extends Controller
             'content' => $validatedData['content'],
             'category_id' => $request->category,
             'tags' => $validatedData['tags'],
-            'user_id' => auth()->id(),
+            'user_id' => auth()->user()->id,
         ];
 
         $thread = Thread::create($threadData);
+        
 
         $postData = [
-            'title' => $validatedData['title'],
             'content' => $validatedData['content'],
             'user_id' => auth()->id(),
             'is_first_post' => true,
             'thread_id' => $thread->id,
         ];
 
-        Post::create($postData);
+        $post = Post::create($postData);
+        
 
         return Redirect::route('home');
     }
@@ -72,9 +74,12 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        $post = Post::findOrFail($id);
+        
+        $post = Thread::find($id)->posts()->where('is_first_post', true)->orderBy('created_at', 'asc')->first();
+        $reply = Thread::find($id)->posts()->where('is_first_post', false)->orderBy('created_at', 'desc')->get();
+        
 
-        return view('single-thread', compact('post'));
+        return view('single-thread', compact('post','reply'));
     }
 
     /**
@@ -112,5 +117,17 @@ class PostController extends Controller
         $thread->delete();
 
         return redirect(route('welcome'));
+    }
+
+    public function reply(Request $request,string $id)
+    {
+        $post = new Post();
+        $post->content = $request->input('content');
+        $post->user_id = auth()->id();
+        $post->thread_id = $id;
+        $post->is_reply_to = $id;
+        $post->is_first_post = false;
+        $post->save();
+        return redirect()->route('thread.show', $id);
     }
 }

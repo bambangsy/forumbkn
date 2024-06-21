@@ -144,14 +144,16 @@
                                        </svg></i>
                                </a>
                                <div class="tt-avatar-icon tt-size-md">
-                                   <i class="tt-icon"><svg>
+                                   <a href="#" class="tt-btn-icon">
+                                    <i class="tt-icon"><svg>
                                            <use xlink:href="#icon-ava-{{ substr(auth()->user()->name, 0, 1) }}"></use>
                                        </svg></i>
+                                    </a>
                                </div>
 
 
                                <div class="d-flex align-items-center ">
-                                   <span class='ml-1'>{{ auth()->user()->name }}</span>
+                                   <a href="{{route('profile.edit')}}"><span '>{{ auth()->user()->name }}</span></a>
                                    <form method="POST" action="{{ route('logout') }}" class="ml-4">
                                        @csrf
                                        <button class="btn btn-primary tt-desktop-menu" type="submit">Logout</button>
