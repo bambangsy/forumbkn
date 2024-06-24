@@ -24,4 +24,8 @@ class PostDetail extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    public function post()
+    {
+        return $this->belongsTo(Post::class);
+    }
 }

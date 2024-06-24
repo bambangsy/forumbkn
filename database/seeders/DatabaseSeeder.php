@@ -26,9 +26,5 @@ class DatabaseSeeder extends Seeder
             'email' => 'raka@example.com',
             'password' => bcrypt('raka') 
         ]);
-
-        Category::create(['name' => 'politik']);
-        Category::create(['name' => 'agama']);
-        Category::create(['name' => 'ketahanan']);
     }
 }

@@ -1,11 +1,12 @@
 <?php
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserCategoryController;
 
 
 Route::get('/', [PostController::class,'index'])->name('home');
-Route::get('/category', function () { return view('category');})->name('category');
+Route::resource('/category', UserCategoryController::class)->names('category');
 
 
 
