@@ -34,5 +34,8 @@ class DatabaseSeeder extends Seeder
         ]);
         // Assigning the expert role to the user
         $expert->assignRole($expertRole);
+
+        // Call the category seeder
+        $this->call(CategorySeeder::class);
     }
 };

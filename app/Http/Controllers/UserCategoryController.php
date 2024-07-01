@@ -10,9 +10,14 @@ class UserCategoryController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $categories = Category::all();
+        $search = $request->input('search');
+        $categories = Category::orderBy('name', 'asc')
+            ->when($search, function ($query) use ($search) {
+                $query->where('name', 'like', "%{$search}%");
+            })
+            ->get();
 
         return view('user.category.index', compact('categories'));
     }
