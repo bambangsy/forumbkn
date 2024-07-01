@@ -16,6 +16,7 @@ class PostDetail extends Model
         'tags',
         'category_id',
         'post_id',
+        'expert_id'
     ];
 
 

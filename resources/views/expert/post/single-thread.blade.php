@@ -1,4 +1,4 @@
-@extends('layouts.forum')
+@extends('layouts.expert')
 
 @section('content')
     <div class="tt-single-topic-list">
@@ -201,7 +201,7 @@
                 </div>
             </div>
         </div>
-        <form action="{{ route('reply.post', $post->id) }}" method="post">
+        <form action="{{ route('expert.reply.post', $post->id) }}" method="post">
             @csrf
             <div class="tt-wrapper-inner">
                 <div class="pt-editor form-default">

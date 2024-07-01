@@ -29,7 +29,15 @@ class DatabaseSeeder extends Seeder
         // Creating an admin user
         $expert = User::create([
             'name' => 'Expert User',
-            'email' => 'exper@example.com',
+            'email' => 'expert1@example.com',
+            'password' => bcrypt('password'),
+        ]);
+        // Assigning the expert role to the user
+        $expert->assignRole($expertRole);
+
+        $expert = User::create([
+            'name' => 'Expert User 2',
+            'email' => 'expert2@example.com',
             'password' => bcrypt('password'),
         ]);
         // Assigning the expert role to the user

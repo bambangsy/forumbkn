@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tag;
 use App\Models\Post;
+use App\Models\User;
 use App\Models\Thread;
 use App\Models\Category;
 use App\Models\PostDetail;
@@ -18,10 +19,16 @@ class PostController extends Controller
      */
     public function index()
     {
+        $posts = Post::where('is_thread', true)
+            ->whereHas('user', function ($query) {
+                $query->whereHas('roles', function ($subQuery) {
+                    $subQuery->where('name', 'user');
+                });
+            })
+            ->orderBy('created_at', 'desc')
+            ->get();
 
-
-        $posts = Post::where('is_thread', true)->orderBy('created_at', 'desc')->get();
-        return view('welcome', compact('posts'));
+        return view('home', compact('posts'));
     }
 
     /**
@@ -30,7 +37,8 @@ class PostController extends Controller
     public function create()
     {
         $category = Category::all();
-        return view('create-thread', compact('category'));
+        $users = User::role('expert')->get();
+        return view('create-thread', compact('category', 'users'));
     }
 
     /**
@@ -38,8 +46,6 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-
-        // Start of Selection
         $validatedData = $request->validate([
             'title' => 'required',
             'type' => 'required',
@@ -61,6 +67,7 @@ class PostController extends Controller
             'tags' => $validatedData['tags'],
             'category_id' => $request->category,
             'post_id' => $post->id,
+            'expert_id' => User::role('expert')->first()->id,
         ];
 
         $postDetail = PostDetail::create($postDetailData);
@@ -84,15 +91,12 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        
-
-        $post = Post::find($id);
+        $post = Post::findOrFail($id);
         $thread = $post->where('is_thread', true)->orderBy('created_at', 'asc')->first();
 
         $reply = Post::where('is_reply_to', $id)->orderBy('created_at', 'desc')->get();
-        
 
-        return view('single-thread', compact('post','reply'));
+        return view('single-thread', compact('post', 'reply'));
     }
 
     /**
@@ -115,10 +119,10 @@ class PostController extends Controller
         $thread->type = $request->type;
         $thread->content = $request->content;
         $thread->tags = $request->tags;
-        
+
         $thread->save();
 
-        return redirect(route('welcome'));
+        return redirect(route('home'));
     }
 
     /**
@@ -132,7 +136,7 @@ class PostController extends Controller
         return redirect(route('welcome'));
     }
 
-    public function reply(Request $request,string $id)
+    public function reply(Request $request, string $id)
     {
         $reply = new Post();
         $reply->content = $request->input('content');
