@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tag;
 use App\Models\Post;
 use App\Models\Thread;
 use App\Models\Category;
@@ -62,8 +63,18 @@ class PostController extends Controller
             'post_id' => $post->id,
         ];
 
-        PostDetail::create($postDetailData);
-        
+        $postDetail = PostDetail::create($postDetailData);
+
+        $tags = explode("\n", $validatedData['tags']);
+        foreach ($tags as $tag) {
+            $tag = strtolower(trim($tag));
+            if (!empty($tag)) {
+                Tag::create([
+                    'name' => $tag,
+                    'post_detail_id' => $postDetail->id,
+                ]);
+            }
+        }
 
         return Redirect::route('home');
     }
